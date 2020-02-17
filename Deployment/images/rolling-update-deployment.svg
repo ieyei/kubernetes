@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 931 700" width="931" height="700">
+  <defs>
+    <font-face font-family="Roboto" font-size="12" panose-1="2 0 0 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-73.24219" underline-thickness="48.828125" slope="0" x-height="528.3203" cap-height="710.9375" ascent="927.7344" descent="-244.14062" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Roboto-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Roboto" font-size="10" panose-1="2 0 0 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-73.24219" underline-thickness="48.828125" slope="0" x-height="528.3203" cap-height="710.9375" ascent="927.7344" descent="-244.14062" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Roboto-Regular"/>
+      </font-face-src>
+    </font-face>
+    <clipPath id="inner_stroke_clip_path">
+      <path d="M 75.53217 217.42443 L 185.24655 217.42443 L 185.24655 273.42443 L 75.53217 273.42443 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_2">
+      <path d="M 75.53217 293.65972 L 185.24655 293.65972 L 185.24655 349.65972 L 75.53217 349.65972 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_3">
+      <path d="M 64.106966 53.305627 L 197.10697 53.305627 L 197.10697 109.30563 L 64.106966 109.30563 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_4">
+      <path d="M 75.53217 369.6597 L 185.24655 369.6597 L 185.24655 425.6597 L 75.53217 425.6597 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_5">
+      <path d="M 306.4824 293.7541 L 416.1968 293.7541 L 416.1968 349.7541 L 306.4824 349.7541 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_6">
+      <path d="M 305.7965 369.7541 L 415.5109 369.7541 L 415.5109 425.7541 L 305.7965 425.7541 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_7">
+      <path d="M 305.7965 445.42474 L 415.5109 445.42474 L 415.5109 501.42474 L 305.7965 501.42474 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_8">
+      <path d="M 294.3713 53.4 L 427.3713 53.4 L 427.3713 109.4 L 294.3713 109.4 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_9">
+      <path d="M 535.5252 369.6597 L 645.2396 369.6597 L 645.2396 425.6597 L 535.5252 425.6597 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_10">
+      <path d="M 535.5252 445.33037 L 645.2396 445.33037 L 645.2396 501.33037 L 535.5252 501.33037 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_11">
+      <path d="M 524.1 53.305627 L 657.1 53.305627 L 657.1 109.30563 L 524.1 109.30563 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_12">
+      <path d="M 535.5252 521.33037 L 645.2396 521.33037 L 645.2396 577.33037 L 535.5252 577.33037 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_13">
+      <path d="M 765.7895 445.33037 L 875.5039 445.33037 L 875.5039 501.33037 L 765.7895 501.33037 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_14">
+      <path d="M 754.3643 53.305627 L 887.3643 53.305627 L 887.3643 109.30563 L 754.3643 109.30563 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_15">
+      <path d="M 765.7895 521.33037 L 875.5039 521.33037 L 875.5039 577.33037 L 765.7895 577.33037 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_16">
+      <path d="M 766.0824 597.3304 L 875.7968 597.3304 L 875.7968 653.3304 L 766.0824 653.3304 Z"/>
+    </clipPath>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.10.1 
+    <dc:date>2020-01-16 10:05:46 +0000</dc:date>
+  </metadata>
+  <g id="Diagram_11" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1" stroke="none">
+    <title>Diagram 11</title>
+    <g id="Diagram_11: Layer 1">
+      <title>Layer 1</title>
+      <g id="Group_538">
+        <g id="Group_536">
+          <g id="Graphic_432">
+            <text transform="translate(438.38507 11.669635)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">During update</tspan>
+            </text>
+          </g>
+          <g id="Graphic_426">
+            <text transform="translate(793.1202 11.669635)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">Final state</tspan>
+            </text>
+          </g>
+          <g id="Graphic_422">
+            <text transform="translate(101.13138 11.669635)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">Initial state</tspan>
+            </text>
+          </g>
+          <g id="Graphic_517">
+            <path d="M 35.205857 32.805625 L 226.00586 33.227566 C 226.282 33.228177 226.50636 33.004815 226.50697 32.728673 C 226.50758 32.45253 226.28422 32.22818 226.00807 32.22757 L 35.20807 31.805628 C 34.931927 31.805017 34.707575 32.02838 34.706964 32.30452 C 34.706354 32.580663 34.929716 32.805015 35.205857 32.805625 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_518">
+            <path d="M 266.00697 33.227567 L 685.4643 33.227567 C 685.7405 33.227567 685.9643 33.00371 685.9643 32.727567 C 685.9643 32.451425 685.7405 32.227567 685.4643 32.227567 L 266.00697 32.227567 C 265.73083 32.227567 265.50697 32.451425 265.50697 32.727567 C 265.50697 33.00371 265.73083 33.227567 266.00697 33.227567 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_519">
+            <path d="M 725.4632 32.805625 L 916.2632 33.227566 C 916.5394 33.228177 916.7637 33.004815 916.7643 32.728673 C 916.765 32.45253 916.5416 32.22818 916.2655 32.22757 L 725.46545 31.805628 C 725.1893 31.805017 724.96495 32.02838 724.9643 32.30452 C 724.9637 32.580663 725.1871 32.805015 725.4632 32.805625 Z" fill="#616161"/>
+          </g>
+        </g>
+        <g id="Group_535">
+          <g id="Graphic_354">
+            <title>zone external - grey</title>
+            <rect x="35.742623" y="129.30563" width="189.72869" height="336.3541" fill="#eaedef"/>
+            <text transform="translate(45.742623 144.30563)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Kubernetes cluster</tspan>
+            </text>
+          </g>
+          <g id="Graphic_353">
+            <title>zone external - grey</title>
+            <path d="M 56.042624 172.30563 L 205.4713 172.30563 L 205.4713 445.6597 L 56.042624 445.6597 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(66.04262 187.30563)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Application</tspan>
+            </text>
+          </g>
+          <g id="Graphic_352">
+            <rect x="75.53217" y="217.42443" width="109.71439" height="56" fill="white"/>
+            <rect x="75.53217" y="217.42443" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path)"/>
+            <text transform="translate(99.98213 237.92443)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_351">
+            <rect x="75.53217" y="293.65972" width="109.71439" height="56" fill="white"/>
+            <rect x="75.53217" y="293.65972" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_2)"/>
+            <text transform="translate(99.98213 314.15972)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Group_346">
+            <title>network load balancer</title>
+            <g id="Graphic_348">
+              <rect x="64.106966" y="53.305627" width="133" height="56" fill="white"/>
+              <rect x="64.106966" y="53.305627" width="133" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_3)"/>
+              <text transform="translate(105.10697 73.80563)" fill="#212121">
+                <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">Load balancer</tspan>
+              </text>
+            </g>
+            <g id="Graphic_347">
+              <path d="M 98.10697 88.30563 L 91.10697 88.30563 L 91.10697 83.30563 L 93.10697 83.30563 L 93.10697 81.30563 L 85.10697 81.30563 L 85.10697 83.30563 L 87.10697 83.30563 L 87.10697 88.30563 L 80.10697 88.30563 L 80.10697 83.30563 L 83.10697 83.30563 L 83.10697 80.30563 C 83.10697 79.75563 83.55697 79.30563 84.10697 79.30563 L 88.10697 79.30563 L 88.10697 77.30563 L 85.10697 77.30563 L 85.10697 72.30563 L 93.10697 72.30563 L 93.10697 77.30563 L 90.10697 77.30563 L 90.10697 79.30563 L 94.10697 79.30563 C 94.65697 79.30563 95.10697 79.75563 95.10697 80.30563 L 95.10697 83.30563 L 98.10697 83.30563 Z" fill="#616161"/>
+            </g>
+          </g>
+          <g id="Graphic_345">
+            <rect x="75.53217" y="369.6597" width="109.71439" height="56" fill="white"/>
+            <rect x="75.53217" y="369.6597" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_4)"/>
+            <text transform="translate(99.98213 390.1597)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_499">
+            <text transform="translate(19.633115 135.46379)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">A)</tspan>
+            </text>
+          </g>
+          <g id="Graphic_520">
+            <path d="M 197.10697 81.72443 L 216.53217 81.72443 L 216.03217 81.22443 L 216.03217 397.62443 L 216.53217 397.12443 L 195.14655 397.12443 C 194.87041 397.12443 194.64655 397.3483 194.64655 397.62443 C 194.64655 397.90057 194.87041 398.12443 195.14655 398.12443 L 216.53217 398.12443 C 216.8083 398.12443 217.03217 397.90057 217.03217 397.62443 L 217.03217 81.22443 C 217.03217 80.94828 216.8083 80.72443 216.53217 80.72443 L 197.10697 80.72443 C 196.83082 80.72443 196.60697 80.94828 196.60697 81.22443 C 196.60697 81.50057 196.83082 81.72443 197.10697 81.72443 Z M 187.14655 398.12443 L 195.14655 398.12443 L 195.14655 397.12443 L 187.14655 397.12443 Z M 191.5001 401.2709 L 187.5001 397.2709 L 187.5001 397.978 L 191.5001 393.978 L 190.793 393.2709 L 186.793 397.2709 L 186.43945 397.62443 L 186.793 397.978 L 190.793 401.978 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_521">
+            <path d="M 216.52234 244.92443 L 195.2213 244.92443 C 194.94517 244.92443 194.7213 245.14829 194.7213 245.42443 C 194.7213 245.70057 194.94517 245.92443 195.2213 245.92443 L 216.52234 245.92443 C 216.79848 245.92443 217.02234 245.70057 217.02234 245.42443 C 217.02234 245.14829 216.79848 244.92443 216.52234 244.92443 Z M 187.2213 245.92443 L 195.2213 245.92443 L 195.2213 244.92443 L 187.2213 244.92443 Z M 191.57486 249.07087 L 187.57486 245.07087 L 187.57486 245.77798 L 191.57486 241.77798 L 190.86775 241.07087 L 186.86775 245.07087 L 186.5142 245.42443 L 186.86775 245.77798 L 190.86775 249.77798 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_522">
+            <path d="M 216.53217 321.15972 L 195.2213 321.15972 C 194.94517 321.15972 194.7213 321.38358 194.7213 321.65972 C 194.7213 321.93586 194.94517 322.15972 195.2213 322.15972 L 216.53217 322.15972 C 216.8083 322.15972 217.03217 321.93586 217.03217 321.65972 C 217.03217 321.38358 216.8083 321.15972 216.53217 321.15972 Z M 187.2213 322.15972 L 195.2213 322.15972 L 195.2213 321.15972 L 187.2213 321.15972 Z M 191.57486 325.30617 L 187.57486 321.30617 L 187.57486 322.01327 L 191.57486 318.01327 L 190.86775 317.30617 L 186.86775 321.30617 L 186.5142 321.65972 L 186.86775 322.01327 L 190.86775 326.01327 Z" fill="#616161"/>
+          </g>
+        </g>
+        <g id="Group_534">
+          <g id="Graphic_477">
+            <title>zone external - grey</title>
+            <rect x="266.00697" y="129.4" width="189.72869" height="412.02474" fill="#eaedef"/>
+            <text transform="translate(276.00697 144.4)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Kubernetes cluster</tspan>
+            </text>
+          </g>
+          <g id="Graphic_476">
+            <title>zone external - grey</title>
+            <path d="M 286.30697 172.4 L 435.73565 172.4 L 435.73565 521.42474 L 286.30697 521.42474 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(296.30697 187.4)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Application</tspan>
+            </text>
+          </g>
+          <g id="Graphic_506">
+            <path d="M 306.4824 217.42443 L 416.1968 217.42443 L 416.1968 273.42443 L 306.4824 273.42443 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(330.93237 237.92443)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_474">
+            <rect x="306.4824" y="293.7541" width="109.71439" height="56" fill="white"/>
+            <rect x="306.4824" y="293.7541" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_5)"/>
+            <text transform="translate(330.93237 314.2541)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_473">
+            <rect x="305.7965" y="369.7541" width="109.71439" height="56" fill="white"/>
+            <rect x="305.7965" y="369.7541" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_6)"/>
+            <text transform="translate(330.24648 390.2541)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_472">
+            <rect x="305.7965" y="445.42474" width="109.71439" height="56" fill="white"/>
+            <rect x="305.7965" y="445.42474" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_7)"/>
+            <text transform="translate(338.20644 465.92474)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:new</tspan>
+            </text>
+          </g>
+          <g id="Group_467">
+            <title>network load balancer</title>
+            <g id="Graphic_469">
+              <rect x="294.3713" y="53.4" width="133" height="56" fill="white"/>
+              <rect x="294.3713" y="53.4" width="133" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_8)"/>
+              <text transform="translate(335.3713 73.9)" fill="#212121">
+                <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">Load balancer</tspan>
+              </text>
+            </g>
+            <g id="Graphic_468">
+              <path d="M 328.3713 88.4 L 321.3713 88.4 L 321.3713 83.4 L 323.3713 83.4 L 323.3713 81.4 L 315.3713 81.4 L 315.3713 83.4 L 317.3713 83.4 L 317.3713 88.4 L 310.3713 88.4 L 310.3713 83.4 L 313.3713 83.4 L 313.3713 80.4 C 313.3713 79.85 313.8213 79.4 314.3713 79.4 L 318.3713 79.4 L 318.3713 77.4 L 315.3713 77.4 L 315.3713 72.4 L 323.3713 72.4 L 323.3713 77.4 L 320.3713 77.4 L 320.3713 79.4 L 324.3713 79.4 C 324.9213 79.4 325.3713 79.85 325.3713 80.4 L 325.3713 83.4 L 328.3713 83.4 Z" fill="#616161"/>
+            </g>
+          </g>
+          <g id="Graphic_500">
+            <text transform="translate(250.08055 135.46379)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">B)</tspan>
+            </text>
+          </g>
+          <g id="Group_464">
+            <g id="Graphic_466">
+              <circle cx="362.03566" cy="272.7" r="12.5000199737737" fill="#ff2a25"/>
+            </g>
+            <g id="Graphic_465">
+              <path d="M 367.03566 268.70715 L 366.0285 267.7 L 362.03566 271.69286 L 358.0428 267.7 L 357.03566 268.70715 L 361.0285 272.7 L 357.03566 276.69286 L 358.0428 277.7 L 362.03566 273.70715 L 366.0285 277.7 L 367.03566 276.69286 L 363.0428 272.7 Z" fill="white"/>
+            </g>
+          </g>
+          <g id="Graphic_523">
+            <path d="M 427.3713 81.66092 L 445.8235 81.66092 L 445.3235 81.16092 L 445.3235 473.5388 L 445.8235 473.0388 L 425.4109 473.0388 C 425.13476 473.0388 424.9109 473.26266 424.9109 473.5388 C 424.9109 473.81495 425.13476 474.0388 425.4109 474.0388 L 445.8235 474.0388 C 446.09963 474.0388 446.3235 473.81495 446.3235 473.5388 L 446.3235 81.16092 C 446.3235 80.88477 446.09963 80.66092 445.8235 80.66092 L 427.3713 80.66092 C 427.09517 80.66092 426.8713 80.88477 426.8713 81.16092 C 426.8713 81.43706 427.09517 81.66092 427.3713 81.66092 Z M 417.4109 474.0388 L 425.4109 474.0388 L 425.4109 473.0388 L 417.4109 473.0388 Z M 421.76445 477.18525 L 417.76445 473.18525 L 417.76445 473.89236 L 421.76445 469.89236 L 421.05735 469.18525 L 417.05735 473.18525 L 416.7038 473.5388 L 417.05735 473.89236 L 421.05735 477.89236 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_524">
+            <path d="M 445.8235 321.0741 L 426.17155 321.0741 C 425.8954 321.0741 425.67155 321.29795 425.67155 321.5741 C 425.67155 321.85024 425.8954 322.0741 426.17155 322.0741 L 445.8235 322.0741 C 446.09963 322.0741 446.3235 321.85024 446.3235 321.5741 C 446.3235 321.29795 446.09963 321.0741 445.8235 321.0741 Z M 418.17155 322.0741 L 426.17155 322.0741 L 426.17155 321.0741 L 418.17155 321.0741 Z M 422.5251 325.22054 L 418.5251 321.22054 L 418.5251 321.92765 L 422.5251 317.92765 L 421.818 317.22054 L 417.818 321.22054 L 417.46444 321.5741 L 417.818 321.92765 L 421.818 325.92765 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_525">
+            <path d="M 445.8235 397.2541 L 425.48565 397.2541 C 425.2095 397.2541 424.98565 397.47795 424.98565 397.7541 C 424.98565 398.03024 425.2095 398.2541 425.48565 398.2541 L 445.8235 398.2541 C 446.09963 398.2541 446.3235 398.03024 446.3235 397.7541 C 446.3235 397.47795 446.09963 397.2541 445.8235 397.2541 Z M 417.48565 398.2541 L 425.48565 398.2541 L 425.48565 397.2541 L 417.48565 397.2541 Z M 421.8392 401.40054 L 417.8392 397.40054 L 417.8392 398.10765 L 421.8392 394.10765 L 421.1321 393.40054 L 417.1321 397.40054 L 416.77855 397.7541 L 417.1321 398.10765 L 421.1321 402.10765 Z" fill="#616161"/>
+          </g>
+        </g>
+        <g id="Group_533">
+          <g id="Graphic_331">
+            <title>zone external - grey</title>
+            <rect x="495.73565" y="129.30563" width="189.72869" height="488.20474" fill="#eaedef"/>
+            <text transform="translate(505.73565 144.30563)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Kubernetes cluster</tspan>
+            </text>
+          </g>
+          <g id="Graphic_330">
+            <title>zone external - grey</title>
+            <path d="M 516.03566 172.30563 L 665.46434 172.30563 L 665.46434 597.5104 L 516.03566 597.5104 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(526.03566 187.30563)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Application</tspan>
+            </text>
+          </g>
+          <g id="Graphic_327">
+            <rect x="535.5252" y="369.6597" width="109.71439" height="56" fill="white"/>
+            <rect x="535.5252" y="369.6597" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_9)"/>
+            <text transform="translate(559.97517 390.1597)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_326">
+            <rect x="535.5252" y="445.33037" width="109.71439" height="56" fill="white"/>
+            <rect x="535.5252" y="445.33037" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_10)"/>
+            <text transform="translate(567.9351 465.83037)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:new</tspan>
+            </text>
+          </g>
+          <g id="Group_320">
+            <title>network load balancer</title>
+            <g id="Graphic_322">
+              <rect x="524.1" y="53.305627" width="133" height="56" fill="white"/>
+              <rect x="524.1" y="53.305627" width="133" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_11)"/>
+              <text transform="translate(565.1 73.80563)" fill="#212121">
+                <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">Load balancer</tspan>
+              </text>
+            </g>
+            <g id="Graphic_321">
+              <path d="M 558.1 88.30563 L 551.1 88.30563 L 551.1 83.30563 L 553.1 83.30563 L 553.1 81.30563 L 545.1 81.30563 L 545.1 83.30563 L 547.1 83.30563 L 547.1 88.30563 L 540.1 88.30563 L 540.1 83.30563 L 543.1 83.30563 L 543.1 80.30563 C 543.1 79.75563 543.55 79.30563 544.1 79.30563 L 548.1 79.30563 L 548.1 77.30563 L 545.1 77.30563 L 545.1 72.30563 L 553.1 72.30563 L 553.1 77.30563 L 550.1 77.30563 L 550.1 79.30563 L 554.1 79.30563 C 554.65 79.30563 555.1 79.75563 555.1 80.30563 L 555.1 83.30563 L 558.1 83.30563 Z" fill="#616161"/>
+            </g>
+          </g>
+          <g id="Graphic_318">
+            <rect x="535.5252" y="521.33037" width="109.71439" height="56" fill="white"/>
+            <rect x="535.5252" y="521.33037" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_12)"/>
+            <text transform="translate(567.9351 541.83037)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:new</tspan>
+            </text>
+          </g>
+          <g id="Graphic_501">
+            <text transform="translate(479.90714 135.46379)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">C)</tspan>
+            </text>
+          </g>
+          <g id="Graphic_507">
+            <path d="M 536.2111 217.42443 L 645.9255 217.42443 L 645.9255 273.42443 L 536.2111 273.42443 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(560.66106 237.92443)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Group_508">
+            <g id="Graphic_510">
+              <circle cx="591.0683" cy="272.7" r="12.5000199737737" fill="#ff2a25"/>
+            </g>
+            <g id="Graphic_509">
+              <path d="M 596.0683 268.70715 L 595.06114 267.7 L 591.0683 271.69286 L 587.0754 267.7 L 586.0683 268.70715 L 590.06114 272.7 L 586.0683 276.69286 L 587.0754 277.7 L 591.0683 273.70715 L 595.06114 277.7 L 596.0683 276.69286 L 592.0754 272.7 Z" fill="white"/>
+            </g>
+          </g>
+          <g id="Graphic_511">
+            <path d="M 536.2111 293.7541 L 645.9255 293.7541 L 645.9255 349.7541 L 536.2111 349.7541 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(560.66106 314.2541)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Group_512">
+            <g id="Graphic_514">
+              <circle cx="591.0683" cy="349.7" r="12.5000199737737" fill="#ff2a25"/>
+            </g>
+            <g id="Graphic_513">
+              <path d="M 596.0683 345.70715 L 595.06114 344.7 L 591.0683 348.69286 L 587.0754 344.7 L 586.0683 345.70715 L 590.06114 349.7 L 586.0683 353.69286 L 587.0754 354.7 L 591.0683 350.70715 L 595.06114 354.7 L 596.0683 353.69286 L 592.0754 349.7 Z" fill="white"/>
+            </g>
+          </g>
+          <g id="Graphic_526">
+            <path d="M 655.1396 549.83037 L 675.4035 549.83037 C 675.6796 549.83037 675.9035 549.6065 675.9035 549.33037 L 675.9035 81.22443 C 675.9035 80.94828 675.6796 80.72443 675.4035 80.72443 L 657.1 80.72443 C 656.82385 80.72443 656.6 80.94828 656.6 81.22443 C 656.6 81.50057 656.82385 81.72443 657.1 81.72443 L 675.4035 81.72443 L 674.9035 81.22443 L 674.9035 549.33037 L 675.4035 548.83037 L 655.1396 548.83037 C 654.86344 548.83037 654.6396 549.0542 654.6396 549.33037 C 654.6396 549.6065 654.86344 549.83037 655.1396 549.83037 Z M 647.1396 549.83037 L 655.1396 549.83037 L 655.1396 548.83037 L 647.1396 548.83037 Z M 651.49314 552.9768 L 647.49314 548.9768 L 647.49314 549.6839 L 651.49314 545.6839 L 650.786 544.9768 L 646.786 548.9768 L 646.4325 549.33037 L 646.786 549.6839 L 650.786 553.6839 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_527">
+            <path d="M 675.4035 397.3397 L 655.21434 397.3397 C 654.9382 397.3397 654.71434 397.5636 654.71434 397.8397 C 654.71434 398.11586 654.9382 398.3397 655.21434 398.3397 L 675.4035 398.3397 C 675.6796 398.3397 675.9035 398.11586 675.9035 397.8397 C 675.9035 397.5636 675.6796 397.3397 675.4035 397.3397 Z M 647.21434 398.3397 L 655.21434 398.3397 L 655.21434 397.3397 L 647.21434 397.3397 Z M 651.5679 401.48617 L 647.5679 397.48617 L 647.5679 398.19327 L 651.5679 394.19327 L 650.8608 393.48617 L 646.8608 397.48617 L 646.5072 397.8397 L 646.8608 398.19327 L 650.8608 402.19327 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_528">
+            <path d="M 675.4035 472.83037 L 655.21434 472.83037 C 654.9382 472.83037 654.71434 473.0542 654.71434 473.33037 C 654.71434 473.6065 654.9382 473.83037 655.21434 473.83037 L 675.4035 473.83037 C 675.6796 473.83037 675.9035 473.6065 675.9035 473.33037 C 675.9035 473.0542 675.6796 472.83037 675.4035 472.83037 Z M 647.21434 473.83037 L 655.21434 473.83037 L 655.21434 472.83037 L 647.21434 472.83037 Z M 651.5679 476.9768 L 647.5679 472.9768 L 647.5679 473.6839 L 651.5679 469.6839 L 650.8608 468.9768 L 646.8608 472.9768 L 646.5072 473.33037 L 646.8608 473.6839 L 650.8608 477.6839 Z" fill="#616161"/>
+          </g>
+        </g>
+        <g id="Group_532">
+          <g id="Graphic_355">
+            <title>zone external - grey</title>
+            <rect x="726" y="129.30563" width="189.72869" height="564.02474" fill="#eaedef"/>
+            <text transform="translate(736 144.30563)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Kubernetes cluster</tspan>
+            </text>
+          </g>
+          <g id="Graphic_356">
+            <title>zone external - grey</title>
+            <path d="M 746.3 172.30563 L 895.7287 172.30563 L 895.7287 673.3304 L 746.3 673.3304 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(756.3 187.30563)" fill="#757575">
+              <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Application</tspan>
+            </text>
+          </g>
+          <g id="Graphic_357">
+            <rect x="766.15715" y="217.42443" width="109.71439" height="56" fill="#eaeef0"/>
+            <path d="M 766.15715 217.42443 L 875.8715 217.42443 L 875.8715 273.42443 L 766.15715 273.42443 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(790.6071 237.92443)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_358">
+            <rect x="766.4754" y="293.65972" width="109.71439" height="56" fill="#eaeef0"/>
+            <path d="M 766.4754 293.65972 L 876.1898 293.65972 L 876.1898 349.65972 L 766.4754 349.65972 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(790.9254 314.15972)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_359">
+            <rect x="765.7895" y="369.6597" width="109.71439" height="56" fill="#eaeef0"/>
+            <path d="M 765.7895 369.6597 L 875.5039 369.6597 L 875.5039 425.6597 L 765.7895 425.6597 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+            <text transform="translate(790.2395 390.1597)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+            </text>
+          </g>
+          <g id="Graphic_360">
+            <rect x="765.7895" y="445.33037" width="109.71439" height="56" fill="white"/>
+            <rect x="765.7895" y="445.33037" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_13)"/>
+            <text transform="translate(798.1995 465.83037)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:new</tspan>
+            </text>
+          </g>
+          <g id="Group_364">
+            <title>network load balancer</title>
+            <g id="Graphic_366">
+              <rect x="754.3643" y="53.305627" width="133" height="56" fill="white"/>
+              <rect x="754.3643" y="53.305627" width="133" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_14)"/>
+              <text transform="translate(795.3643 73.80563)" fill="#212121">
+                <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">Load balancer</tspan>
+              </text>
+            </g>
+            <g id="Graphic_365">
+              <path d="M 788.3643 88.30563 L 781.3643 88.30563 L 781.3643 83.30563 L 783.3643 83.30563 L 783.3643 81.30563 L 775.3643 81.30563 L 775.3643 83.30563 L 777.3643 83.30563 L 777.3643 88.30563 L 770.3643 88.30563 L 770.3643 83.30563 L 773.3643 83.30563 L 773.3643 80.30563 C 773.3643 79.75563 773.8143 79.30563 774.3643 79.30563 L 778.3643 79.30563 L 778.3643 77.30563 L 775.3643 77.30563 L 775.3643 72.30563 L 783.3643 72.30563 L 783.3643 77.30563 L 780.3643 77.30563 L 780.3643 79.30563 L 784.3643 79.30563 C 784.9143 79.30563 785.3643 79.75563 785.3643 80.30563 L 785.3643 83.30563 L 788.3643 83.30563 Z" fill="#616161"/>
+            </g>
+          </g>
+          <g id="Graphic_368">
+            <rect x="765.7895" y="521.33037" width="109.71439" height="56" fill="white"/>
+            <rect x="765.7895" y="521.33037" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_15)"/>
+            <text transform="translate(798.1995 541.83037)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:new</tspan>
+            </text>
+          </g>
+          <g id="Graphic_369">
+            <rect x="766.0824" y="597.3304" width="109.71439" height="56" fill="white"/>
+            <rect x="766.0824" y="597.3304" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_16)"/>
+            <text transform="translate(798.4923 617.8304)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:new</tspan>
+            </text>
+          </g>
+          <g id="Group_403">
+            <g id="Graphic_386">
+              <circle cx="822.0313" cy="273.21408" r="12.5000199737737" fill="#ff2a25"/>
+            </g>
+            <g id="Graphic_385">
+              <path d="M 827.0313 269.22122 L 826.0242 268.21408 L 822.0313 272.20694 L 818.0384 268.21408 L 817.0313 269.22122 L 821.0242 273.21408 L 817.0313 277.20694 L 818.0384 278.21408 L 822.0313 274.22122 L 826.0242 278.21408 L 827.0313 277.20694 L 823.0384 273.21408 Z" fill="white"/>
+            </g>
+          </g>
+          <g id="Group_402">
+            <g id="Graphic_389">
+              <circle cx="821.4215" cy="349.44937" r="12.5000199737737" fill="#ff2a25"/>
+            </g>
+            <g id="Graphic_388">
+              <path d="M 826.4215 345.4565 L 825.4144 344.44937 L 821.4215 348.44223 L 817.4287 344.44937 L 816.4215 345.4565 L 820.4144 349.44937 L 816.4215 353.44223 L 817.4287 354.44937 L 821.4215 350.4565 L 825.4144 354.44937 L 826.4215 353.44223 L 822.4287 349.44937 Z" fill="white"/>
+            </g>
+          </g>
+          <g id="Group_404">
+            <g id="Graphic_392">
+              <circle cx="820.7357" cy="425.44937" r="12.5000199737737" fill="#ff2a25"/>
+            </g>
+            <g id="Graphic_391">
+              <path d="M 825.7357 421.4565 L 824.7285 420.44937 L 820.7357 424.44223 L 816.7428 420.44937 L 815.7357 421.4565 L 819.7285 425.44937 L 815.7357 429.44223 L 816.7428 430.44937 L 820.7357 426.4565 L 824.7285 430.44937 L 825.7357 429.44223 L 821.7428 425.44937 Z" fill="white"/>
+            </g>
+          </g>
+          <g id="Graphic_502">
+            <text transform="translate(709.8744 135.46379)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">D)</tspan>
+            </text>
+          </g>
+          <g id="Graphic_529">
+            <path d="M 885.6968 625.8304 L 906.543 625.8304 C 906.8191 625.8304 907.043 625.6065 907.043 625.3304 L 907.043 81.36792 C 907.043 81.09178 906.8191 80.86792 906.543 80.86792 L 886.8699 80.86792 C 886.5938 80.86792 886.3699 81.09178 886.3699 81.36792 C 886.3699 81.64407 886.5938 81.86792 886.8699 81.86792 L 906.543 81.86792 L 906.043 81.36792 L 906.043 625.3304 L 906.543 624.8304 L 885.6968 624.8304 C 885.4206 624.8304 885.1968 625.0542 885.1968 625.3304 C 885.1968 625.6065 885.4206 625.8304 885.6968 625.8304 Z M 877.6968 625.8304 L 885.6968 625.8304 L 885.6968 624.8304 L 877.6968 624.8304 Z M 882.0503 628.9768 L 878.0503 624.9768 L 878.0503 625.6839 L 882.0503 621.6839 L 881.3432 620.9768 L 877.3432 624.9768 L 876.9897 625.3304 L 877.3432 625.6839 L 881.3432 629.6839 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_530">
+            <path d="M 906.163 472.83037 L 885.4787 472.83037 C 885.2025 472.83037 884.9787 473.0542 884.9787 473.33037 C 884.9787 473.6065 885.2025 473.83037 885.4787 473.83037 L 906.163 473.83037 C 906.4391 473.83037 906.663 473.6065 906.663 473.33037 C 906.663 473.0542 906.4391 472.83037 906.163 472.83037 Z M 877.4787 473.83037 L 885.4787 473.83037 L 885.4787 472.83037 L 877.4787 472.83037 Z M 881.8322 476.9768 L 877.8322 472.9768 L 877.8322 473.6839 L 881.8322 469.6839 L 881.1251 468.9768 L 877.1251 472.9768 L 876.7716 473.33037 L 877.1251 473.6839 L 881.1251 477.6839 Z" fill="#616161"/>
+          </g>
+          <g id="Graphic_531">
+            <path d="M 906.0729 548.83037 L 884.8026 548.83037 C 884.5264 548.83037 884.3026 549.0542 884.3026 549.33037 C 884.3026 549.6065 884.5264 549.83037 884.8026 549.83037 L 906.0729 549.83037 C 906.349 549.83037 906.5729 549.6065 906.5729 549.33037 C 906.5729 549.0542 906.349 548.83037 906.0729 548.83037 Z M 876.8026 549.83037 L 884.8026 549.83037 L 884.8026 548.83037 L 876.8026 548.83037 Z M 881.1561 552.9768 L 877.1561 548.9768 L 877.1561 549.6839 L 881.1561 545.6839 L 880.449 544.9768 L 876.449 548.9768 L 876.0955 549.33037 L 876.449 549.6839 L 880.449 553.6839 Z" fill="#616161"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

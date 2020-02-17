@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 420 289" width="420" height="289">
+  <defs>
+    <font-face font-family="Roboto" font-size="10" panose-1="2 0 0 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-73.24219" underline-thickness="48.828125" slope="0" x-height="528.3203" cap-height="710.9375" ascent="927.7344" descent="-244.14062" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Roboto-Regular"/>
+      </font-face-src>
+    </font-face>
+    <clipPath id="inner_stroke_clip_path">
+      <path d="M 261.3132 102.24191 L 371.0276 102.24191 L 371.0276 158.24191 L 261.3132 158.24191 Z"/>
+    </clipPath>
+    <font-face font-family="Roboto" font-size="12" panose-1="2 0 0 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-73.24219" underline-thickness="48.828125" slope="0" x-height="528.3203" cap-height="710.9375" ascent="927.7344" descent="-244.14062" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Roboto-Regular"/>
+      </font-face-src>
+    </font-face>
+    <clipPath id="inner_stroke_clip_path_2">
+      <path d="M 260.70346 178.4772 L 370.41784 178.4772 L 370.41784 234.4772 L 260.70346 234.4772 Z"/>
+    </clipPath>
+    <clipPath id="inner_stroke_clip_path_3">
+      <path d="M 10.395369 140.67574 L 143.39537 140.67574 L 143.39537 196.67574 L 10.395369 196.67574 Z"/>
+    </clipPath>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.10.1 
+    <dc:date>2020-01-16 10:05:46 +0000</dc:date>
+  </metadata>
+  <g id="Diagram_10" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1" stroke="none">
+    <title>Diagram 10</title>
+    <g id="Diagram_10: Layer 1">
+      <title>Layer 1</title>
+      <g id="Group_206">
+        <g id="Graphic_14">
+          <title>zone external - grey</title>
+          <rect x="220.16165" y="14.522793" width="189.44298" height="259.9544" fill="#eaedef"/>
+          <text transform="translate(230.16165 29.522793)" fill="#757575">
+            <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Kubernetes cluster</tspan>
+          </text>
+        </g>
+        <g id="Graphic_127">
+          <title>zone external - grey</title>
+          <path d="M 240.46165 57.52279 L 389.60463 57.52279 L 389.60463 254.4772 L 240.46165 254.4772 Z" stroke="#616161" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,3.0" stroke-width="1"/>
+          <text transform="translate(250.46165 72.52279)" fill="#757575">
+            <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Application</tspan>
+          </text>
+        </g>
+        <g id="Graphic_18">
+          <rect x="261.3132" y="102.24191" width="109.71439" height="56" fill="white"/>
+          <rect x="261.3132" y="102.24191" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path)"/>
+          <text transform="translate(285.76318 122.74191)" fill="#212121">
+            <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:current</tspan>
+          </text>
+        </g>
+        <g id="Graphic_133">
+          <rect x="260.70346" y="178.4772" width="109.71439" height="56" fill="white"/>
+          <rect x="260.70346" y="178.4772" width="109.71439" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_2)"/>
+          <text transform="translate(293.1134 198.9772)" fill="#212121">
+            <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">app:new</tspan>
+          </text>
+        </g>
+        <g id="Group_19">
+          <title>network load balancer</title>
+          <g id="Graphic_21">
+            <rect x="10.395369" y="140.67574" width="133" height="56" fill="white"/>
+            <rect x="10.395369" y="140.67574" width="133" height="56" stroke="#dfdfdf" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#inner_stroke_clip_path_3)"/>
+            <text transform="translate(51.39537 161.17574)" fill="#212121">
+              <tspan font-family="Roboto" font-size="12" font-weight="400" fill="#212121" x="0" y="11">Load balancer</tspan>
+            </text>
+          </g>
+          <g id="Graphic_20">
+            <path d="M 44.39537 175.67574 L 37.39537 175.67574 L 37.39537 170.67574 L 39.39537 170.67574 L 39.39537 168.67574 L 31.39537 168.67574 L 31.39537 170.67574 L 33.39537 170.67574 L 33.39537 175.67574 L 26.39537 175.67574 L 26.39537 170.67574 L 29.39537 170.67574 L 29.39537 167.67574 C 29.39537 167.12574 29.84537 166.67574 30.39537 166.67574 L 34.39537 166.67574 L 34.39537 164.67574 L 31.39537 164.67574 L 31.39537 159.67574 L 39.39537 159.67574 L 39.39537 164.67574 L 36.39537 164.67574 L 36.39537 166.67574 L 40.39537 166.67574 C 40.94537 166.67574 41.39537 167.12574 41.39537 167.67574 L 41.39537 170.67574 L 44.39537 170.67574 Z" fill="#616161"/>
+          </g>
+        </g>
+        <g id="Graphic_191">
+          <text transform="translate(163.93971 98.12427)" fill="#757575">
+            <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Production </tspan>
+            <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="21">traffic</tspan>
+          </text>
+        </g>
+        <g id="Graphic_193">
+          <text transform="translate(164.01384 211.55723)" fill="#757575">
+            <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="9">Mirrored </tspan>
+            <tspan font-family="Roboto" font-size="10" font-weight="400" fill="#757575" x="0" y="21">traffic</tspan>
+          </text>
+        </g>
+        <g id="Graphic_204">
+          <path d="M 250.93323 205.97042 L 163.93971 205.97042 L 164.43971 206.47042 L 164.43971 130.12427 L 163.93971 130.62427 L 250.93323 130.62427 C 251.20937 130.62427 251.43323 130.40041 251.43323 130.12427 C 251.43323 129.84812 251.20937 129.62427 250.93323 129.62427 L 163.93971 129.62427 C 163.66357 129.62427 163.43971 129.84812 163.43971 130.12427 L 163.43971 206.47042 C 163.43971 206.74656 163.66357 206.97042 163.93971 206.97042 L 250.93323 206.97042 C 251.20937 206.97042 251.43323 206.74656 251.43323 206.47042 C 251.43323 206.19428 251.20937 205.97042 250.93323 205.97042 Z M 258.93323 129.62427 L 250.93323 129.62427 L 250.93323 130.62427 L 258.93323 130.62427 Z M 254.57968 126.47782 L 258.57968 130.47782 L 258.57968 129.77071 L 254.57968 133.77071 L 255.28678 134.47782 L 259.28678 130.47782 L 259.64034 130.12427 L 259.28678 129.77071 L 255.28678 125.77071 Z M 258.93323 205.97042 L 250.93323 205.97042 L 250.93323 206.97042 L 258.93323 206.97042 Z M 254.57968 202.82397 L 258.57968 206.82397 L 258.57968 206.11687 L 254.57968 210.11687 L 255.28678 210.82397 L 259.28678 206.82397 L 259.64034 206.47042 L 259.28678 206.11687 L 255.28678 202.11687 Z" fill="#616161"/>
+        </g>
+        <g id="Graphic_205">
+          <path d="M 143.39537 168.67574 L 164.04412 168.67574 C 164.32027 168.67574 164.54412 168.45188 164.54412 168.17574 C 164.54412 167.8996 164.32027 167.67574 164.04412 167.67574 L 143.39537 167.67574 C 143.11923 167.67574 142.89537 167.8996 142.89537 168.17574 C 142.89537 168.45188 143.11923 168.67574 143.39537 168.67574 Z" fill="#616161"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -316,6 +316,39 @@ deployment "app-02" successfully rolled out
 
 
 #### Switch traffic from the blue deployment to the green deployment
+서비스 이름은 변경없이 selector만 demo-app-v1에서 demo-app-v2로 변경해서 배포하면,
+트래픽을 app:current에서 app:new로 바로 스위칭 할 수 있다.
+
+```
+$ cd bluegreen
+
+$ diff service-old.yaml service-new.yaml
+21c21
+<     app: demo-app-v1
+---
+>     app: demo-app-v2
+
+$ diff deployment-old.yaml deployment-new.yaml
+18c18
+<   name: app-01
+---
+>   name: app-02
+22c22
+<       app: demo-app-v1
+---
+>       app: demo-app-v2
+26c26
+<          app: demo-app-v1
+---
+>          app: demo-app-v2
+30c30
+<           image: gcr.io/cloud-solutions-images/app:current
+---
+>           image: gcr.io/cloud-solutions-images/app:new
+
+$ cd ..
+```
+
 Terminal #1
 ```
 # Update the service selector to point to the new version:
@@ -323,7 +356,7 @@ $ kubectl apply -f bluegreen/service-new.yaml
 service/app configured
 ```
 
-서비스가 업데이트되면 트랜잭션 요청이 새로운 버전으로 스위칭된다.
+서비스가 업데이트되면 트랜잭션 요청이 새로운 버전으로 스위칭된다.  
 Terminal #2
 ```
 {"id":1,"content":"current"}
@@ -339,6 +372,7 @@ Terminal #2
 ## Testing the new application version
 
 ### Perform a canary test
+카나리 테스트는 새 버전의 애플리케이션을 특정%만큼 배포하고 그 성능을 테스트 하는 방법
 
 ![canary-test](./images/canary-test.svg)
 
@@ -363,9 +397,7 @@ Terminal #2
 
 
 ### Perform an A/B test
-
-
-
+A/B 테스트는 특정 조건(지역,브라우저 버전, 유저 에이전트등) 맞는 새로운 버전의 애플리케이션을 배포하고 테스트 하는 방법
 ![AB-test](./images/AB-test.svg)
 
 #### Deploy the current version
@@ -385,6 +417,7 @@ Terminal #2
 
 
 ### Perform a shadow test
+새 버전을 생성하고 기존 애플리케이션으로 들어오는 트래픽을 미러링해서 기존 환경에 영향없이 테스트 하는 방법.
 
 ![shadow-test](./images/shadow-test.svg)
 

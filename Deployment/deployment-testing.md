@@ -376,19 +376,127 @@ Terminal #2
 
 ![canary-test](./images/canary-test.svg)
 
+Test
+
+* 현재 버전 application 배포(app:current)
+* 외부 트래픽 발생을 위해 Istio 사용
+* 현재 버전은 그대로 두고, 새로운 버전 application 배포(app:new)
+* Istio를 통해 미리 정해진 비중대로 트래픽을  (app:current)와 (app:new)에 나누어 보냄
+
 #### Deploy the current version
+
+Deploy the current version of the application:
+
+```
+kubectl apply -f canary/deployment-old.yaml
+```
+
+
+
+Verify that the deployment is created successfully:
+
+```
+kubectl rollout status deploy app-01
+
+deployment "app-01" successfully rolled out
+```
+
+
+
+Deploy the Istio resources:
+
+```
+kubectl apply \
+    -f canary/gateway.yaml \
+    -f canary/virtualservice.yaml
+```
 
 
 
 #### Test the deployment
 
+Terminal #2
+
+Get the Istio ingress gateway IP address:
+
+```
+SERVICE_IP=$(kubectl get service istio-ingressgateway \
+    -n istio-system \
+    -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
+```
+
+Generate traffic against the deployed application:
+
+```
+while(true); \
+    do curl "http://${SERVICE_IP}/version"; echo; sleep 2; done
+```
+
+
+
 
 
 #### Deploy the new version (canary)
 
+Terminal #1
+
+deploy the new application version
+
+```
+kubectl apply -f canary/deployment-new.yaml
+```
+
+Verify that the deployment is created successfully:
+
+```
+kubectl rollout status deploy app-02
+```
+
 
 
 #### Split the traffic
+
+Terminal #1
+
+```
+kubectl apply \
+    -f canary/destinationrule.yaml \
+    -f canary/virtualservice-split.yaml
+```
+
+
+
+Terminal #2
+
+```
+[...]
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":2,"content":"new"}
+{"id":1,"content":"current"}
+{"id":2,"content":"new"}
+{"id":2,"content":"new"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+[...]
+```
+
+
+
+Clean up the resources
+
+```
+kubectl delete -f canary/ --ignore-not-found
+```
 
 
 
@@ -400,46 +508,265 @@ Terminal #2
 A/B 테스트는 특정 조건(지역,브라우저 버전, 유저 에이전트등) 맞는 새로운 버전의 애플리케이션을 배포하고 테스트 하는 방법
 ![AB-test](./images/AB-test.svg)
 
+Test
+
+* 현재 버전 application 배포(app:current)
+* 현재 버전은 그대로 두고, 새로운 버전 application 배포(app:new)
+* Istio를 통해 username이 test인 트래픽을  (app:new)로 보내고 나머지 트래픽을  (app:current)로 보냄
+
+#### 
+
 #### Deploy the current version
+
+Deploy the current application version:
+
+```
+kubectl apply -f ab/deployment-old.yaml
+```
+
+Verify that the deployment is created successfully:
+
+```
+kubectl rollout status deploy app-01
+```
+
+Deploy the Istio resources:
+
+```
+kubectl apply -f ab/gateway.yaml -f ab/virtualservice.yaml
+```
 
 
 
 #### Test the deployment
 
+Terminal #2
+
+Get the Istio ingress gateway IP address:
+
+```
+SERVICE_IP=$(kubectl get service istio-ingressgateway \
+    -n istio-system \
+    -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
+```
+
+Send a request to the application:
+
+```
+curl "http://${SERVICE_IP}/version"
+```
+
+The output is similar to the following:
+
+```
+{"id":1,"content":"current"} 
+```
+
 
 
 #### Deploy the new version
+
+Deploy the new version of the application:
+
+```
+kubectl apply -f ab/deployment-new.yaml
+```
+
+
+
+Verify that the deployment is created successfully:
+
+```
+kubectl rollout status deploy app-02
+```
+
+The output is similar to the following:
+
+```
+[...]
+deployment "app-02" successfully rolled out
+```
 
 
 
 #### Split the traffic
 
+Split the [traffic](https://github.com/GoogleCloudPlatform/gke-deployment-testing-strategies/blob/master/ab/virtualservice-split.yaml)  based on the username received in the request's cookie:
+
+```
+kubectl apply \
+    -f ab/destinationrule.yaml \
+    -f ab/virtualservice-split.yaml
+```
+
+All requests where `user` is identified as `test` go to the new application version.
+
+Send a request to the application in which `user` is identified as `test`:
+
+```
+curl --cookie "user=test" "http://${SERVICE_IP}/version"
+```
+
+The output is similar to the following:
+
+```
+{"id":2,"content":"new"}
+```
+
+Send a request without the cookie:
+
+```
+curl "http://${SERVICE_IP}/version"
+```
+
+The output is similar to the following:
+
+```
+{"id":1,"content":"current"} 
+```
+
+
+
+Clean up the resources
+
+```
+kubectl delete -f ab/ --ignore-not-found
+```
+
 
 
 ### Perform a shadow test
+
 새 버전을 생성하고 기존 애플리케이션으로 들어오는 트래픽을 미러링해서 기존 환경에 영향없이 테스트 하는 방법.
 
 ![shadow-test](./images/shadow-test.svg)
 
 #### Deploy the current version
 
+Deploy the current version of the application:
+
+```
+kubectl apply -f shadow/deployment-old.yaml
+```
+
+
+
+Verify that the deployment is created successfully:
+
+```
+kubectl rollout status deploy app-01
+```
+
+The output is similar to the following:
+
+```
+[...]
+deployment "app-01" successfully rolled out
+```
+
+Deploy the Istio resources:
+
+```
+kubectl apply \
+    -f shadow/gateway.yaml \
+    -f shadow/virtualservice.yaml
+```
+
 
 
 #### Test the deployment
+
+Terminal #2
+
+Get the Istio ingress gateway IP address:
+
+```
+SERVICE_IP=$(kubectl get service istio-ingressgateway \
+    -n istio-system \
+    -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
+```
+
+Generate traffic against the deployed application:
+
+```
+while(true); \
+    do curl "http://${SERVICE_IP}/version"; echo; sleep 2; done
+```
+
+The output is similar to the following:
+
+```
+{"id":1,"content":"current"} {"id":1,"content":"current"} {"id":1,"content":"current"} [...] 
+```
 
 
 
 #### Deploy the new version
 
+In your original Cloud Shell session, deploy the [new application version](https://github.com/GoogleCloudPlatform/gke-deployment-testing-strategies/blob/master/shadow/deployment-new.yaml):
+
+```
+kubectl apply -f shadow/deployment-new.yaml
+```
+
+
+
+Verify that the deployment is created successfully:
+
+```
+kubectl rollout status deploy app-02
+```
+
+The output is similar to the following:
+
+```
+[...] 
+deployment "app-02" successfully rolled out 
+```
+
 
 
 #### Set up traffic mirroring
 
+Set up [traffic mirroring](https://github.com/GoogleCloudPlatform/gke-deployment-testing-strategies/blob/master/shadow/virtualservice-mirror.yaml)  by updating the Istio resources:
+
+```
+kubectl apply -f shadow/virtualservice-mirror.yaml
+```
+
+In the terminal where you ran the `curl` command, you see that `app:current` still serves requests, as the following output indicates:
+
+```
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+{"id":1,"content":"current"}
+[...]
+```
+
+Check the new deployment logs to ensure that the traffic is mirrored:
+
+```
+kubectl logs -f --tail=3 deployment/app-02
+```
+
+The output is similar to the following:
+
+```
+2020-02-19 13:16:51.424  INFO 1 --- [nio-8080-exec-7] com.google.springboot.SpringBootDemo     : Serving request from version 2
+2020-02-19 13:16:53.749  INFO 1 --- [nio-8080-exec-8] com.google.springboot.SpringBootDemo     : Serving request from version 2
+2020-02-19 13:16:54.853  INFO 1 --- [nio-8080-exec-9] com.google.springboot.SpringBootDemo     : Serving request from version 2
+2020-02-19 13:16:56.073  INFO 1 --- [io-8080-exec-10] com.google.springboot.SpringBootDemo     : Serving request from version 2
+2020-02-19 13:16:58.393  INFO 1 --- [nio-8080-exec-1] com.google.springboot.SpringBootDemo     : Serving request from version 2
+2020-02-19 13:17:00.589  INFO 1 --- [nio-8080-exec-2] com.google.springboot.SpringBootDemo     : Serving request from version 2
+```
 
 
 
+Clean up the resources
 
-
+```
+kubectl delete -f shadow/ --ignore-not-found
+```
 
 
 

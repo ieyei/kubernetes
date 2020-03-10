@@ -257,6 +257,8 @@ https://github.com/kubernetes-sigs/kubespray
 
 https://waspro.tistory.com/558
 
+https://waspro.tistory.com/557
+
 https://dzone.com/articles/kubespray-10-simple-steps-for-installing-a-product
 
 

@@ -126,6 +126,95 @@ https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
 
 
 
+## Prerequisites:
+
+### Disable SELinux: 
+
+```
+setenforce 0
+setenforce Disabled
+
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+sed -i --follow-symlinks 's/SELINUX=permissive/SELINUX=disabled/g' /etc/sysconfig/selinux
+```
+
+
+
+### Set the firewall rules
+
+On all “master” Servers:
+
+```
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --add-port=2379-2380/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10251/tcp
+firewall-cmd --permanent --add-port=10252/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd --reload
+modprobe br_netfilter
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+sysctl -w net.ipv4.ip_forward=1
+```
+
+
+
+On all “node” servers:
+
+```
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd --permanent --add-port=6783/tcp
+firewall-cmd --reload
+modprobe br_netfilter
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+sysctl -w net.ipv4.ip_forward=1
+```
+
+Or all
+
+```
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --add-port=2379-2380/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10251/tcp
+firewall-cmd --permanent --add-port=10252/tcp
+firewall-cmd --permanent --add-port=10255/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd --permanent --add-port=6783/tcp
+firewall-cmd --reload
+modprobe br_netfilter
+echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+sysctl -w net.ipv4.ip_forward=1
+```
+
+
+
+
+
+If possible, you can stop firewall service on all servers in the cluster:
+
+```
+systemctl stop firewalld
+```
+
+
+
+tar files
+
+```
+#curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/libselinux-python-2.5-14.1.el7.x86_64.rpm
+
+curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/python-netaddr-0.7.5-9.el7.noarch.rpm
+```
+
+
+
+
+
+
+
 
 
 # Ansible 설치
@@ -263,6 +352,7 @@ docker tag quay.io/coreos/etcd:v3.3.10                                          
 docker tag gcr.io/google-containers/pause:3.1                                     nxgregistry.azurecr.io/google-containers/pause:3.1
 docker tag gcr.io/google_containers/pause-amd64:3.1                               nxgregistry.azurecr.io/google_containers/pause-amd64:3.1
 docker tag lachlanevenson/k8s-helm:v3.1.0										  nxgregistry.azurecr.io/lachlanevenson/k8s-helm:v3.1.0
+docker tag gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0  nxgregistry.azurecr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
 ```
 
 
@@ -376,30 +466,179 @@ Download binary files
 └── kubernetes-scripts
 ```
 
+
+
+설치 파일 복사
+
+```
+mkdir /tmp/releases
+```
+
+대상 파일
+
+* kubelet
+* kubectl
+* kubeadm
+* etcd-v3.3.10-linux-amd64.tar.gz
+* cni-plugins-linux-amd64-v0.8.3.tgz
+* calicoctl-linux-amd64
+
+```
+mv kube* /usr/local/bin
+tar zxf etcd-v3.3.10-linux-amd64.tar.gz --strip 1 -C /usr/local/bin 
+tar zxf cni-plugins-linux-amd64-v0.8.3.tgz -C /usr/local/bin
+chmod +x /usr/local/bin/*
+chown -R root:root /usr/local/bin/
+```
+
+
+
+
+
+$KUBESPRAY/inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
+
+(아래 내용 추가)
+
+```
+# private install
+kube_internet_install_enabled: false
+
+kube_proxy_mode: iptables  # ipvs => iptables 수정
+```
+
+
+
+
+
 $KUBESPRAY/roles/download/defaults/main.yml 내용
 
 ```
-...
-kubelet_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubelet"
-kubectl_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubectl"
-kubeadm_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm"
-etcd_download_url: "https://github.com/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-{{ image_arch }}.tar.gz"
-cni_download_url: "https://github.com/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
-calicoctl_download_url: "https://github.com/projectcalico/calicoctl/releases/download/{{ calico_ctl_version }}/calicoctl-linux-{{ image_arch }}"
-crictl_download_url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ crictl_version }}/crictl-{{ crictl_version }}-{{ ansible_system | lower }}-{{ image_arch }}.tar.gz"
-...
+# etcd, cni, kubeadm, kubectl, kubelet
+enabled: "{{ kube_internet_install_enabled|default(true) }}" # 수정
 ```
 
 
 
 
+
+
+
+
+
+
+
+```
+image_arch: "{{host_architecture | default('amd64')}}"
+
+kube_version: v1.16.6
+kubeadm_version: "{{ kube_version }}"
+etcd_version: v3.3.10
+cni_version: "v0.8.3"
+calico_ctl_version: "v3.11.1"
+
+curl https://storage.googleapis.com/kubernetes-release/release/v1.16.6/bin/linux/amd64/kubelet -o kubelet-v1.16.6-amd64
+curl https://storage.googleapis.com/kubernetes-release/release/v1.16.6/bin/linux/amd64/kubectl -o kubectl-v1.16.6-amd64
+curl https://storage.googleapis.com/kubernetes-release/release/v1.16.6/bin/linux/amd64/kubeadm -o kubeadm-v1.16.6-amd64
+curl -OL https://github.com/coreos/etcd/releases/download/v3.3.10/etcd-v3.3.10-linux-amd64.tar.gz
+curl -OL https://github.com/containernetworking/plugins/releases/download/v0.8.3/cni-plugins-linux-amd64-v0.8.3.tgz
+curl -OL https://github.com/projectcalico/calicoctl/releases/download/v3.11.1/calicoctl-linux-amd64
+```
+
+
+
+
+
+
+
+### Copy inventory/sample as inventory/mycluster
+
+```
+cp -R inventory/sample/ inventory/mycluster
+
+```
+
+
+
+### Update the Ansible inventory file 
+
+$KUBESPRAY/inventory/mycluster/hosts.yml
+
+```
+all:
+  hosts:
+    controller-0:
+      ansible_host: 10.233.0.10
+      ip: 10.233.0.10
+      access_ip: 10.233.0.10
+    controller-1:
+      ansible_host: 10.233.0.11
+      ip: 10.233.0.11
+      access_ip: 10.233.0.11
+    controller-2:
+      ansible_host: 10.233.0.12
+      ip: 10.233.0.12
+      access_ip: 10.233.0.12
+    worker-0:
+      ansible_host: 10.233.0.20
+      ip: 10.233.0.20
+      access_ip: 10.233.0.20
+    worker-1:
+      ansible_host: 10.233.0.21
+      ip: 10.233.0.21
+      access_ip: 10.233.0.21
+  children:
+    kube-master:
+      hosts:
+        controller-0:
+        controller-1:
+        controller-2:
+    kube-node:
+      hosts:
+        controller-0:
+        controller-1:
+        controller-2:
+        worker-0:
+        worker-1:
+    etcd:
+      hosts:
+        controller-0:
+        controller-1:
+        controller-2:
+    k8s-cluster:
+      children:
+        kube-master:
+        kube-node:
+    calico-rr:
+      hosts: {}
+```
+
+
+
+
+
+### External LB
+
+$KUBESPRAY/inventory/mycluster/group_vars/all/all.yml
+
+```
+## External LB example config
+## apiserver_loadbalancer_domain_name: "elb.some.domain"
+# loadbalancer_apiserver:
+#   address: 1.2.3.4
+#   port: 1234
+
+apiserver_loadbalancer_domain_name: 10.128.15.213
+loadbalancer_apiserver:
+  address: 10.128.15.213
+  port: 16443
+```
 
 
 
 ### Deploy Kubespray with Ansible Playbook
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml 
+ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml --flush-cache 2>&1 | tee ansible.log 
 ```
 
 

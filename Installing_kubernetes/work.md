@@ -250,6 +250,128 @@ https://medium.com/sqooba/create-your-own-custom-and-authenticated-apt-repositor
 
 
 
+proxy1 server
+docker hub 구성
+1. nginx설치
+sudo apt install nginx
+DocRott 변경 - /home/gs/sw/nginx
+
+2. docker 설정
+cd /home/gs/sw/nginx
+wget -r https://download.docker.com/linux/centos/7/x86_64/stable/repodata/
+stable만 남기고 삭제
+mv download.docker.com docker-ce
+
+
+mkdir -p /home/gs/sw/nginx/docker-ce/linux/centos/7/x86_64/stable/Packages
+mkdir -p /home/gs/sw/nginx/docker-ce/linux/centos/7/x86_64/stable/repodata
+cd /home/gs/sw/nginx/docker-ce/linux/centos
+curl -OL https://download.docker.com/linux/centos/gpg
+cd /home/gs/sw/nginx/docker-ce/linux/centos/7/x86_64/stable/repodata
+curl -OL https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml
+cd /home/gs/sw/nginx/docker-ce/linux/centos/7/x86_64/stable/Packages
+
+
+cd /home/gs/sw/nginx
+mkdir -p /home/gs/sw/nginx/kubernetes-release/release/v1.16.6/bin/linux/amd64
+mkdir -p /home/gs/sw/nginx/coreos/etcd/releases/download/v3.3.10
+mkdir -p /home/gs/sw/nginx/containernetworking/plugins/releases/download/v0.8.3
+mkdir -p /home/gs/sw/nginx/projectcalico/calicoctl/releases/download/v3.11.1
+mkdir -p /home/gs/sw/nginx/kubernetes-sigs/cri-tools/releases/download/v1.16.1
+
+curl https://storage.googleapis.com/kubernetes-release/release/v1.16.6/bin/linux/amd64/kubelet -o kubernetes-release/release/v1.16.6/bin/linux/amd64/kubelet
+curl https://storage.googleapis.com/kubernetes-release/release/v1.16.6/bin/linux/amd64/kubectl -o kubernetes-release/release/v1.16.6/bin/linux/amd64/kubectl
+curl https://storage.googleapis.com/kubernetes-release/release/v1.16.6/bin/linux/amd64/kubeadm -o kubernetes-release/release/v1.16.6/bin/linux/amd64/kubeadm
+curl https://github.com/coreos/etcd/releases/download/v3.3.10/etcd-v3.3.10-linux-amd64.tar.gz -o coreos/etcd/releases/download/v3.3.10/etcd-v3.3.10-linux-amd64.tar.gz
+curl https://github.com/containernetworking/plugins/releases/download/v0.8.3/cni-plugins-linux-amd64-v0.8.3.tgz -o containernetworking/plugins/releases/download/v0.8.3/cni-plugins-linux-amd64-v0.8.3.tgz
+curl https://github.com/projectcalico/calicoctl/releases/download/v3.11.1/calicoctl-linux-amd64 -o projectcalico/calicoctl/releases/download/v3.11.1/calicoctl-linux-amd64
+curl https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.16.1/crictl-v1.16.1-linux-amd64.tar.gz -o kubernetes-sigs/cri-tools/releases/download/v1.16.1/crictl-v1.16.1-linux-amd64.tar.gz
+
+
+kubelet_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubelet"
+kubectl_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubectl"
+kubeadm_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm"
+etcd_download_url: "http://10.0.1.9/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-{{ image_arch }}.tar.gz"
+cni_download_url: "https://10.0.1.9/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
+calicoctl_download_url: "http://10.0.1.9/projectcalico/calicoctl/releases/download/{{ calico_ctl_version }}/calicoctl-linux-{{ image_arch }}"
+crictl_download_url: "http://10.0.1.9/kubernetes-sigs/cri-tools/releases/download/{{ crictl_version }}/crictl-{{ crictl_version }}-{{ ansible_system | lower }}-{{ image_arch }}.tar.gz"
+
+
+
+* docker repository 경로를 내부망 경로로 변경
+kubespray/roles/container-engine/docker/defaults/main.yml
+# CentOS/RedHat docker-ce repo
+#docker_rh_repo_base_url: 'https://download.docker.com/linux/centos/7/$basearch/stable'
+#docker_rh_repo_gpgkey: 'https://download.docker.com/linux/centos/gpg'
+docker_rh_repo_base_url: 'http://10.0.1.9/docker-ce/linux/centos/7/$basearch/stable'
+docker_rh_repo_gpgkey: 'http://10.0.1.9/docker-ce/linux/centos/gpg'
+
+# flag to enable/disable docker cleanup
+docker_orphan_clean_up: true
+
+
+* docker file에 대한 gpg check disable
+kubespray/roles/container-engine/docker/tasks/main.yml
+gpgcheck: yes  -> gpgcheck: no
+
+* 주요 다운로드 URL을 내부망으로 변경
+kubespray/roles/download/defaults/main.yml
+
+# gcr and kubernetes image repo define
+#gcr_image_repo: "gcr.io"
+gcr_image_repo: "10.0.1.9:5000"
+kube_image_repo: "{{ gcr_image_repo }}/google-containers"
+
+# docker image repo define
+#docker_image_repo: "docker.io"
+docker_image_repo: "10.0.1.9:5000"
+
+# quay image repo define
+#quay_image_repo: "quay.io"
+quay_image_repo: "10.0.1.9:5000"
+
+
+# Download URLs
+#kubelet_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubelet"
+#kubectl_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubectl"
+#kubeadm_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm"
+#etcd_download_url: "https://github.com/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-{{ image_arch }}.tar.gz"
+#cni_download_url: "https://github.com/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
+#calicoctl_download_url: "https://github.com/projectcalico/calicoctl/releases/download/{{ calico_ctl_version }}/calicoctl-linux-{{ image_arch }}"
+#crictl_download_url: "https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ crictl_version }}/crictl-{{ crictl_version }}-{{ ansible_system | lower }}-{{ image_arch }}.tar.gz"
+
+kubelet_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubelet"
+kubectl_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubectl"
+kubeadm_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm"
+etcd_download_url: "http://10.0.1.9/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-{{ image_arch }}.tar.gz"
+cni_download_url: "https://10.0.1.9/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
+calicoctl_download_url: "http://10.0.1.9/projectcalico/calicoctl/releases/download/{{ calico_ctl_version }}/calicoctl-linux-{{ image_arch }}"
+crictl_download_url: "http://10.0.1.9/kubernetes-sigs/cri-tools/releases/download/{{ crictl_version }}/crictl-{{ crictl_version }}-{{ ansible_system | lower }}-{{ image_arch }}.tar.gz"
+
+
+
+* etcd 인증서 체크 disable
+kubespray/roles/etcd/tasks/check_certs.yml
+sync_certs: true  -> sync_certs: false
+
+* docker registry에 대한 insecure registries를 추가
+kubespray/inventory/mycluster/group_vars/all/docker.yml
+docker_insecure_registries:
+  - 10.0.1.9:5000
+
+* docker registry 주소 설정
+kubespray/inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
+# kubernetes image repo define
+gcr_image_repo: "10.0.1.9:5000"
+kube_image_repo: "{{ gcr_image_repo }}/google-containers"
+
+# docker image repo define
+docker_image_repo: "10.0.1.9:5000"
+
+# quay image repo define
+quay_image_repo: "10.0.1.9:5000"
+
+
 
 ### kubenetes install
 
@@ -275,14 +397,11 @@ ansible-playbook -i inventory/mycluster/hosts.yml --become --become-user=root cl
 fatal: [node2]: FAILED! => {"attempts": 1, "changed": false, "msg": "https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 14] curl#7 - \"Failed to connect to 2600:9000:2150:5800:3:db06:4200:93a1: Network is unreachable\"\nTrying other mirror.
 
 
+10.0.1.4
+10.0.1.5
+10.0.1.6
+10.0.1.7
+10.0.1.8
 
-
-
-
-
-
-ssh -i ~/.ssh/az_gs node1 
-ssh -i ~/.ssh/az_gs node2
-ssh -i ~/.ssh/az_gs node3
-ssh -i ~/.ssh/az_gs node4
-ssh -i ~/.ssh/az_gs node5
+10.0.1.9
+10.0.1.10

@@ -101,8 +101,8 @@ pip install jmespath-0.9.5.tar.gz
 
 #curl -OL https://files.pythonhosted.org/packages/df/ed/bea598a87a8f7e21ac5bbf464102077c7102557c07db9ff4e207bd9f7806/setuptools-46.0.0.zip
 
-curl -OL https://files.pythonhosted.org/packages/16/8b/54a26c1031595e5edd0e616028b922d78d8ffba8bc775f0a4faeada846cc/ruamel.yaml-0.16.10.tar.gz
-pip install ruamel.yaml-0.16.10.tar.gz
+#curl -OL https://files.pythonhosted.org/packages/16/8b/54a26c1031595e5edd0e616028b922d78d8ffba8bc775f0a4faeada846cc/ruamel.yaml-0.16.10.tar.gz
+#pip install ruamel.yaml-0.16.10.tar.gz
 
 
 
@@ -110,8 +110,8 @@ pip install ruamel.yaml-0.16.10.tar.gz
 curl -OL http://mirror.centos.org/centos/7/os/x86_64/Packages/cloud-utils-growpart-0.29-5.el7.noarch.rpm
 sudo rpm -ivh cloud-utils-growpart-0.29-5.el7.noarch.rpm
 
-curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/yum-utils-1.1.31-52.el7.noarch.rpm
-sudo rpm -ivh yum-utils-1.1.31-52.el7.noarch.rpm
+#curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/yum-utils-1.1.31-52.el7.noarch.rpm
+#sudo rpm -ivh yum-utils-1.1.31-52.el7.noarch.rpm
 
 
 
@@ -125,11 +125,14 @@ sudo rpm -ivh yum-utils-1.1.31-52.el7.noarch.rpm
   - xfsprogs
   - conntrack
 
-curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/e2fsprogs-1.42.9-16.el7.x86_64.rpm
-sudo rpm -ivh e2fsprogs-1.42.9-16.el7.x86_64.rpm
+#curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/e2fsprogs-1.42.9-16.el7.x86_64.rpm
+#sudo rpm -ivh e2fsprogs-1.42.9-16.el7.x86_64.rpm
 
-curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/xfsprogs-4.5.0-20.el7.x86_64.rpm
-sudo rpm -ivh xfsprogs-4.5.0-20.el7.x86_64.rpm
+#curl -OL http://rpmfind.net/linux/centos/7.7.1908/os/x86_64/Packages/xfsprogs-4.5.0-20.el7.x86_64.rpm
+#sudo rpm -ivh xfsprogs-4.5.0-20.el7.x86_64.rpm
+
+
+
 
 
 
@@ -306,6 +309,14 @@ kubespray/roles/container-engine/docker/defaults/main.yml
 docker_rh_repo_base_url: 'http://10.0.1.9/docker-ce/linux/centos/7/$basearch/stable'
 docker_rh_repo_gpgkey: 'http://10.0.1.9/docker-ce/linux/centos/gpg'
 
+# CentOS/RedHat Extras repo
+#extras_rh_repo_base_url: "http://mirror.centos.org/centos/$releasever/extras/$basearch/"
+#extras_rh_repo_gpgkey: "http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7"
+extras_rh_repo_base_url: "http://10.0.1.9/docker-mirror/centos/$releasever/extras/$basearch/"
+extras_rh_repo_gpgkey: "http://10.0.1.9/docker-mirror/centos/RPM-GPG-KEY-CentOS-7"
+
+
+
 # flag to enable/disable docker cleanup
 docker_orphan_clean_up: true
 
@@ -373,6 +384,12 @@ quay_image_repo: "10.0.1.9:5000"
 
 
 
+fatal: [node1]: UNREACHABLE! => {"changed": false, "msg": "SSH Error: data could not be sent to remote host \"10.0.1.4\". Make sure this host can be reached over ssh", "unreachable": true}
+
+
+
+
+
 ### kubenetes install
 
 mkdir /tmp/releases
@@ -390,8 +407,8 @@ curl https://github.com/projectcalico/calicoctl/releases/download/v3.11.1/calico
 ### kubespray install
 ANSIBLE_VERBOSITY=4 
 ansible-playbook -i inventory/mycluster/hosts.yml --become --become-user=root cluster.yml --flush-cache 
-
-
+ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml --flush-cache
+ansible-playbook -i inventory/mycluster/hosts.yml reset.yml --flush-cache
 
 ### error
 fatal: [node2]: FAILED! => {"attempts": 1, "changed": false, "msg": "https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 14] curl#7 - \"Failed to connect to 2600:9000:2150:5800:3:db06:4200:93a1: Network is unreachable\"\nTrying other mirror.

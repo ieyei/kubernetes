@@ -68,6 +68,13 @@ curl -OL https://files.pythonhosted.org/packages/d8/03/e491f423379ea14bb3a02a523
 pip install Jinja2-2.11.1.tar.gz 
 
 ### files
+
+
+
+mkdir -p /var/www/piprepo
+cd /var/www/piprepo
+
+vi requirements.txt
 ansible==2.7.16
 jinja2==2.10.1
 netaddr==0.7.19
@@ -75,6 +82,82 @@ pbr==5.2.0
 hvac==0.8.2
 jmespath==0.9.4
 ruamel.yaml==0.15.96
+
+To save:
+pip install --download=/var/www/piprepo -r requirements.txt
+
+pip install -r requirements.txt
+pip freeze > requirements2.txt
+
+
+And to restore
+pip install --no-index --find-links=http://admin/var/www/piprepo -r requirements.txt
+
+
+https://stackoverflow.com/questions/32302379/could-not-find-a-version-that-satisfies-the-requirement-package
+
+vi requirements2.txt
+ansible==2.7.16
+bcrypt==3.1.7
+certifi==2019.11.28
+cffi==1.14.0
+chardet==3.0.4
+cryptography==2.8
+enum34==1.1.10
+hvac==0.8.2
+idna==2.9
+ipaddress==1.0.23
+Jinja2==2.10.1
+jmespath==0.9.4
+MarkupSafe==1.1.1
+netaddr==0.7.19
+paramiko==2.7.1
+pbr==5.2.0
+pycparser==2.20
+PyNaCl==1.3.0
+PyYAML==5.3
+requests==2.23.0
+ruamel.ordereddict==0.4.14
+ruamel.yaml==0.15.96
+setuptools==46.0.0
+six==1.14.0
+urllib3==1.25.8
+
+
+===============================================================================================================================================================================
+ Package                                   Arch                        Version                                  Repository                                                Size
+===============================================================================================================================================================================
+Installing:
+ ansible                                   noarch                      2.7.16-1.el7.ans                         /ansible-2.7.16-1.el7.ans.noarch                          60 M
+Installing for dependencies:
+ PyYAML                                    x86_64                      3.10-11.el7                              rhui-rhel-7-server-rhui-rpms                             153 k
+ libyaml                                   x86_64                      0.1.4-11.el7_0                           rhui-rhel-7-server-rhui-rpms                              55 k
+ python-babel                              noarch                      0.9.6-8.el7                              rhui-rhel-7-server-rhui-rpms                             1.4 M
+ python-cffi                               x86_64                      1.6.0-5.el7                              rhui-rhel-7-server-rhui-rpms                             218 k
+ python-enum34                             noarch                      1.0.4-1.el7                              rhui-rhel-7-server-rhui-rpms                              52 k
+ python-idna                               noarch                      2.4-1.el7                                rhui-rhel-7-server-rhui-rpms                              94 k
+ python-jinja2                             noarch                      2.7.2-4.el7                              rhui-rhel-7-server-rhui-rpms                             519 k
+ python-markupsafe                         x86_64                      0.11-10.el7                              rhui-rhel-7-server-rhui-rpms                              25 k
+ python-paramiko                           noarch                      2.1.1-9.el7                              rhui-rhel-7-server-rhui-rpms                             269 k
+ python-ply                                noarch                      3.4-11.el7                               rhui-rhel-7-server-rhui-rpms                             123 k
+ python-pycparser                          noarch                      2.14-1.el7                               rhui-rhel-7-server-rhui-rpms                             105 k
+ python2-cryptography                      x86_64                      1.7.2-2.el7                              rhui-rhel-7-server-rhui-rpms                             503 k
+ sshpass                                   x86_64                      1.06-2.el7                               rhui-rhel-7-server-rhui-extras-rpms                       21 k
+
+Transaction Summary
+===============================================================================================================================================================================
+Install  1 Package (+13 Dependent packages)
+
+
+** copy piperepo to node1
+cd $piperepo
+(PyYAML-5.3.tar.gz, setuptools-46.0.0.zip -  )
+pip install * --upgrade --force-reinstall
+
+
+
+https://www.tecmint.com/setup-local-http-yum-repository-on-centos-7/
+
 
 
 
@@ -177,6 +260,52 @@ docker pull lachlanevenson/k8s-helm:v3.1.0
 docker pull gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0 
 
 
+docker image tag gcr.io/google-containers/kube-controller-manager:v1.16.6				        admin:5000/google-containers/kube-controller-manager:v1.16.6
+docker image tag gcr.io/google-containers/kube-apiserver:v1.16.6                        admin:5000/google-containers/kube-apiserver:v1.16.6
+docker image tag gcr.io/google-containers/kube-proxy:v1.16.6                            admin:5000/google-containers/kube-proxy:v1.16.6
+docker image tag gcr.io/google-containers/kube-scheduler:v1.16.6                        admin:5000/google-containers/kube-scheduler:v1.16.6
+docker image tag calico/node:v3.11.1                                                    admin:5000/calico/node:v3.11.1
+docker image tag calico/cni:v3.11.1                                                     admin:5000/calico/cni:v3.11.1
+docker image tag calico/kube-controllers:v3.11.1                                        admin:5000/calico/kube-controllers:v3.11.1
+docker image tag gcr.io/google-containers/k8s-dns-node-cache:1.15.8                     admin:5000/google-containers/k8s-dns-node-cache:1.15.8
+docker image tag coredns/coredns:1.6.0                                                  admin:5000/coredns/coredns:1.6.0
+docker image tag weaveworks/weave-kube:2.5.2                                            admin:5000/weaveworks/weave-kube:2.5.2
+docker image tag weaveworks/weave-npc:2.5.2                                             admin:5000/weaveworks/weave-npc:2.5.2
+docker image tag gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0   admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+docker image tag gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1            admin:5000/google_containers/kubernetes-dashboard-amd64:v1.10.1
+docker image tag quay.io/coreos/etcd:v3.3.10                                            admin:5000/coreos/etcd:v3.3.10
+docker image tag gcr.io/google-containers/pause:3.1                                     admin:5000/google-containers/pause:3.1
+docker image tag gcr.io/google_containers/pause-amd64:3.1                               admin:5000/google_containers/pause-amd64:3.1
+docker image tag lachlanevenson/k8s-helm:v3.1.0										    admin:5000/lachlanevenson/k8s-helm:v3.1.0
+docker image tag gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0   admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+
+
+docker push admin:5000/google-containers/kube-controller-manager:v1.16.6
+docker push admin:5000/google-containers/kube-apiserver:v1.16.6
+docker push admin:5000/google-containers/kube-proxy:v1.16.6
+docker push admin:5000/google-containers/kube-scheduler:v1.16.6
+docker push admin:5000/calico/node:v3.11.1
+docker push admin:5000/calico/cni:v3.11.1
+docker push admin:5000/calico/kube-controllers:v3.11.1
+docker push admin:5000/google-containers/k8s-dns-node-cache:1.15.8
+docker push admin:5000/coredns/coredns:1.6.0
+docker push admin:5000/weaveworks/weave-kube:2.5.2
+docker push admin:5000/weaveworks/weave-npc:2.5.2
+docker push admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+docker push admin:5000/google_containers/kubernetes-dashboard-amd64:v1.10.1
+docker push admin:5000/coreos/etcd:v3.3.10
+docker push admin:5000/google-containers/pause:3.1
+docker push admin:5000/google_containers/pause-amd64:3.1	
+docker push admin:5000/lachlanevenson/k8s-helm:v3.1.0
+docker push admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+
+
+
+
+
+
+
+
 docker image tag gcr.io/google-containers/kube-controller-manager:v1.16.6				10.0.1.9:5000/google-containers/kube-controller-manager:v1.16.6
 docker image tag gcr.io/google-containers/kube-apiserver:v1.16.6                        10.0.1.9:5000/google-containers/kube-apiserver:v1.16.6
 docker image tag gcr.io/google-containers/kube-proxy:v1.16.6                            10.0.1.9:5000/google-containers/kube-proxy:v1.16.6
@@ -257,6 +386,24 @@ proxy1 server
 docker hub 구성
 1. nginx설치
 sudo apt install nginx
+#redhat
+https://www.nginx.com/resources/wiki/start/topics/tutorials/install/
+
+vi /etc/yum.repo.d/nginx.repo
+[nginx]
+name=nginx repo
+baseurl=https://nginx.org/packages/rhel/7/$basearch/
+gpgcheck=0
+enabled=1
+
+sudo yum install nginx --downloadonly --downloaddir=/home/gs/repo
+sudo yum localinstall /home/gs/repo/nginx-1.16.1-1.el7.ngx.x86_64.rpm
+
+sudo service nginx start
+
+
+
+
 DocRott 변경 - /home/gs/sw/nginx
 
 2. docker 설정
@@ -273,6 +420,9 @@ curl -OL https://download.docker.com/linux/centos/gpg
 cd /home/gs/sw/nginx/docker-ce/linux/centos/7/x86_64/stable/repodata
 curl -OL https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml
 cd /home/gs/sw/nginx/docker-ce/linux/centos/7/x86_64/stable/Packages
+
+
+mirror !!
 
 
 cd /home/gs/sw/nginx
@@ -295,9 +445,20 @@ kubelet_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kube_versio
 kubectl_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/kubectl"
 kubeadm_download_url: "http://10.0.1.9/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm"
 etcd_download_url: "http://10.0.1.9/coreos/etcd/releases/download/{{ etcd_version }}/etcd-{{ etcd_version }}-linux-{{ image_arch }}.tar.gz"
-cni_download_url: "https://10.0.1.9/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
+cni_download_url: "http://10.0.1.9/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
 calicoctl_download_url: "http://10.0.1.9/projectcalico/calicoctl/releases/download/{{ calico_ctl_version }}/calicoctl-linux-{{ image_arch }}"
 crictl_download_url: "http://10.0.1.9/kubernetes-sigs/cri-tools/releases/download/{{ crictl_version }}/crictl-{{ crictl_version }}-{{ ansible_system | lower }}-{{ image_arch }}.tar.gz"
+
+
+* docker-ce repo => all servs
+/etc/yum.repos.d/docker.repo
+
+[Docker CE]
+name=Docker CE Stable - $basearch
+baseurl=http://10.0.1.9/docker-ce/linux/centos/7/$basearch/stable
+enabled=1
+gpgcheck=0
+gpgkey=http://10.0.1.9/docker-ce/linux/centos/gpg
 
 
 
@@ -402,23 +563,124 @@ curl https://github.com/coreos/etcd/releases/download/v3.3.10/etcd-v3.3.10-linux
 curl https://github.com/containernetworking/plugins/releases/download/v0.8.3/cni-plugins-linux-amd64-v0.8.3.tgz -o cni-plugins-linux-amd64-v0.8.3.tgz 
 curl https://github.com/projectcalico/calicoctl/releases/download/v3.11.1/calicoctl-linux-amd64 -o calicoctl-linux-amd64
 
+#yum packege save
+https://mslee89.tistory.com/76
+yum install yum-downloadonly
+
+
+#create yum repo (10.0.1.14)
+add host to servers
+echo "10.0.1.14 admin" >> /etc/hosts
+
+mkdir repo
+sudo yum install libselinux-python device-mapper-libs ebtables nss openssl curl rsync socat unzip e2fsprogs xfsprogs conntrack \
+ --downloadonly --downloaddir=/home/gs/repo 
+
+sudo yum install createrepo --downloadonly --downloaddir=/home/gs/repo 
+
+sudo yum localinstall /home/gs/repo/createrepo-0.9.9-28.el7.noarch.rpm
+createrepo /home/gs/repo
+
+#kube servers
+cd /etc/yum.repos.d/
+mv rh-cloud.repo /root/etc
+
+#save files to proxy1/repo
+custom.repo
+[Custum-Repo]
+name=custom repo
+baseurl=http://admin/repo/
+enabled=1
+gpgcheck=0
+
+
+#mkdir /root/repo
+#yum install libselinux-python device-mapper-libs ebtables nss openssl curl rsync socat unzip e2fsprogs xfsprogs conntrack \
+#--downloadonly --downloaddir=/root/repo 
+
+
+
+
+
+
 
 
 ### kubespray install
 ANSIBLE_VERBOSITY=4 
 ansible-playbook -i inventory/mycluster/hosts.yml --become --become-user=root cluster.yml --flush-cache 
-ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml --flush-cache
+ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml --flush-cache -vvv
 ansible-playbook -i inventory/mycluster/hosts.yml reset.yml --flush-cache
 
 ### error
 fatal: [node2]: FAILED! => {"attempts": 1, "changed": false, "msg": "https://download.docker.com/linux/centos/7/x86_64/stable/repodata/repomd.xml: [Errno 14] curl#7 - \"Failed to connect to 2600:9000:2150:5800:3:db06:4200:93a1: Network is unreachable\"\nTrying other mirror.
 
 
-10.0.1.4
-10.0.1.5
-10.0.1.6
-10.0.1.7
-10.0.1.8
+"msg": "non-zero return code", 
+    "rc": 1, 
+    "start": "2020-03-14 05:07:43.740219", 
+    "stderr": "Error response from daemon: Get http://10.0.1.9:5000/v2/: dial tcp 10.0.1.9:5000: connect: connection refused", 
+    "stderr_lines": [
+        "Error response from daemon: Get http://10.0.1.9:5000/v2/: dial tcp 10.0.1.9:5000: connect: connection refused"
 
-10.0.1.9
-10.0.1.10
+roles/download/tasks/download_container.yml
+=>
+    - name: download_container | Download image if required
+      command: "{{ image_pull_command_on_localhost if download_localhost else image_pull_command }} {{ image_reponame }}"
+      delegate_to: "{{ download_delegate if download_run_once else inventory_hostname }}"
+      delegate_facts: yes
+      run_once: "{{ download_run_once }}"
+      register: pull_task_result
+      until: pull_task_result is succeeded
+      delay: "{{ retry_stagger | random + 3 }}"
+      retries: 4
+      become: "{{ user_can_become_root | default(false) or not download_localhost }}"
+      when:
+        - pull_required
+        - not image_is_cached
+      ignore_errors: yes  # added
+
+
+
+msg": "The checksum for /tmp/releases/calicoctl did not match 045fdbfdb30789194c499ba17c8eac6d1704fe20d05e3c10027eb570767386db; it was a9be42e611675f59cfcbaaff21d9b460b559cb4df93e7abef37fe10b63fb17b4.", 
+    "src": "/root/.ansible/tmp/ansible-moduletmp-1584164879.24-Z8x2RX/tmpl55t_C", 
+    "url": "http://10.0.1.9/projectcalico/calicoctl/releases/download/v3.11.1/calicoctl-linux-amd64"
+=> 
+roles/download/defaults/main.yml
+calicoctl_binary_checksums:
+  arm:
+    v3.11.1: 0
+    v3.7.3: 0
+    v3.6.1: 0
+    v3.5.4: 0
+    v3.4.4: 0
+  amd64:
+#    v3.11.1: 045fdbfdb30789194c499ba17c8eac6d1704fe20d05e3c10027eb570767386db
+    v3.11.1: a9be42e611675f59cfcbaaff21d9b460b559cb4df93e7abef37fe10b63fb17b4
+
+
+(sha256sum file) checksum 
+
+
+"msg": "The checksum for /tmp/releases/cni-plugins-linux-amd64-v0.8.3.tgz did not match 29a092bef9cb6f26c8d5340f3d56567b62c7ebdb1321245d94b1842c80ba20ba; it was be5ad170986a6324c28a35d8f82a752a8398075189c503695dc3fb6648e5efd4.", 
+    "src": "/root/.ansible/tmp/ansible-moduletmp-1584166517.78-anm6hp/tmp8wpkxF", 
+    "url": "http://10.0.1.9/containernetworking/plugins/releases/download/v0.8.3/cni-plugins-linux-amd64-v0.8.3.tgz"
+=>
+
+roles/download/tasks/download_file.yml
+cni -> false
+
+ignore_errors: yes  # added
+
+---
+"msg": "non-zero return code", 
+    "rc": 2, 
+    "start": "2020-03-14 08:21:41.197240", 
+    "stderr": "/usr/local/bin/calicoctl: line 1: syntax error near unexpected token `<'\n/usr/local/bin/calicoctl: line 1: `<html><body>You are being <a href=\"https://github-production-release-asset-2e65be.s3.amazonaws.com/29629333/36a5c700-233e-11ea-9d0c-d7e46abe6169?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200314%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20200314T054212Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=4e82e88452abac1fb55fee603d246d8861a28ee0c01b0976adc7748c6a7822f0&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;response-content-disposition=attachment%3B%20filename%3Dcalicoctl-linux-amd64&amp;response-content-type=application%2Foctet-stream\">redirected</a>.</body></html>'", 
+    "stderr_lines": [
+        "/usr/local/bin/calicoctl: line 1: syntax error near unexpected token `<'", 
+        "/usr/local/bin/calicoctl: line 1: `<html><body>You are being <a href=\"https://github-production-release-asset-2e65be.s3.amazonaws.com/29629333/36a5c700-233e-11ea-9d0c-d7e46abe6169?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200314%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20200314T054212Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=4e82e88452abac1fb55fee603d246d8861a28ee0c01b0976adc7748c6a7822f0&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;response-content-disposition=attachment%3B%20filename%3Dcalicoctl-linux-amd64&amp;response-content-type=application%2Foctet-stream\">redirected</a>.</body></html>'"
+
+
+https://help.github.com/en/enterprise/2.18/user/github/using-git/configuring-git-to-handle-line-endings
+
+roles/network_plugin/calico/tasks/install.yml

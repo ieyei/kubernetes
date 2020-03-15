@@ -52,6 +52,11 @@ web2
 sudo apt install haproxy -y
 ```
 
+```
+yum install haproxy --downloadonly --downloaddir=/var/www/repo
+yum localinstall /var/www/repo/haproxy-1.5.18-9.el7.x86_64.rpm
+```
+
 
 
 ### 초기설정

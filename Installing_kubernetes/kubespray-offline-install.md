@@ -2,6 +2,20 @@
 
 
 
+admin : 10.0.1.14
+
+node1 : 10.0.1.15
+
+node2 : 10.0.1.16
+
+node3 : 10.0.1.17
+
+node4 : 10.0.1.18
+
+node5 : 10.0.1.19
+
+
+
 OS: RHEL7.7
 
 master nodes :  node1, node2, node3
@@ -122,6 +136,37 @@ init 6
 
 
 
+### yum repo update on all servers
+
+불필요한 repo 정리(삭제 또는 이름 변경)
+
+```
+cd /etc/yum.repos.d/
+mv rh-cloud.repo rh-cloud.repo.bk
+```
+
+
+
+custom repo 추가 - admin 서버로 설정
+
+vi custom.repo
+
+```
+[Custum-Repo]
+name=custom repo
+baseurl=http://admin/repo/
+enabled=1
+gpgcheck=0
+```
+
+
+
+```
+yum update
+```
+
+
+
 ### Install some prerequisites packages on all servers in the cluster
 
 **epel-release**
@@ -146,12 +191,15 @@ yum install -y python36
 
 **Ansible:**
 
+$KUBESPRAY/requirements.txt  참조
+
 ```
 yum install -y ansible
 
 scp admin:/var/www/piprepo.tar .
 tar xf piprepo.tar
 cd piprepo
+
 pip install netaddr-0.7.19-py2.py3-none-any.whl
 pip install Jinja2-2.10.1-py2.py3-none-any.whl  MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl
 pip install ruamel.ordereddict-0.4.14-cp27-cp27mu-manylinux1_x86_64.whl ruamel.yaml-0.15.96-cp27-cp27mu-manylinux1_x86_64.whl
@@ -162,6 +210,10 @@ pip install ruamel.ordereddict-0.4.14-cp27-cp27mu-manylinux1_x86_64.whl ruamel.y
 ## Kubespray
 
 ### Git clone the Kubespray repository on one of the master servers:
+
+offline 환경에서는 git clone이 불가능하므로 미리 admin server에 저장한 파일 복사
+
+
 
 node1
 

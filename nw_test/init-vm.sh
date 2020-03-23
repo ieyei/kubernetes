@@ -1,7 +1,7 @@
 #!/bin/bash
 set +e
 
-user='az-user'
+user='ubuntu'
 # docker && docker-compose
 apt update -y
 apt update && apt install \

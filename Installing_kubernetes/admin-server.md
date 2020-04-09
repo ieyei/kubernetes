@@ -448,6 +448,15 @@ docker pull lachlanevenson/k8s-helm:v3.1.0
 docker pull gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0 
 ```
 
+docker file save&load
+```
+docker images | sed '1d' | awk '{print $1 ":" $2}'
+docker save -o images_k8s.tar $(docker images | sed '1d' | awk '{print $1 ":" $2}')
+# upload files to azure
+# download files from azure
+
+docker load -i images_k8s.tar
+```
 
 
 docker tag

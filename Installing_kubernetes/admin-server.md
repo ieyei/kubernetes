@@ -46,7 +46,11 @@ echo "10.0.1.14 admin" >> /etc/hosts
 
 참고 - https://www.nginx.com/resources/wiki/start/topics/tutorials/install/
 
-
+```
+mkdir /var/www
+tar xf kubespray-offline.tar.gz -C /var/www
+yum localinstall /var/www/repo/nginx-1.16.1-1.el7.ngx.x86_64.rpm
+```
 
 file 저장 디렉토리
 

@@ -175,6 +175,61 @@ docker info
 systemctl enable docker
 ```
 
+docker image load
+```
+docker load -i /var/www/images_k8s.tar
+```
+
+
+docker tag
+
+```
+docker image tag gcr.io/google-containers/kube-controller-manager:v1.16.6				        admin:5000/google-containers/kube-controller-manager:v1.16.6
+docker image tag gcr.io/google-containers/kube-apiserver:v1.16.6                        admin:5000/google-containers/kube-apiserver:v1.16.6
+docker image tag gcr.io/google-containers/kube-proxy:v1.16.6                            admin:5000/google-containers/kube-proxy:v1.16.6
+docker image tag gcr.io/google-containers/kube-scheduler:v1.16.6                        admin:5000/google-containers/kube-scheduler:v1.16.6
+docker image tag calico/node:v3.11.1                                                    admin:5000/calico/node:v3.11.1
+docker image tag calico/cni:v3.11.1                                                     admin:5000/calico/cni:v3.11.1
+docker image tag calico/kube-controllers:v3.11.1                                        admin:5000/calico/kube-controllers:v3.11.1
+docker image tag gcr.io/google-containers/k8s-dns-node-cache:1.15.8                     admin:5000/google-containers/k8s-dns-node-cache:1.15.8
+docker image tag coredns/coredns:1.6.0                                                  admin:5000/coredns/coredns:1.6.0
+docker image tag weaveworks/weave-kube:2.5.2                                            admin:5000/weaveworks/weave-kube:2.5.2
+docker image tag weaveworks/weave-npc:2.5.2                                             admin:5000/weaveworks/weave-npc:2.5.2
+docker image tag gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0   admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+docker image tag gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1            admin:5000/google_containers/kubernetes-dashboard-amd64:v1.10.1
+docker image tag quay.io/coreos/etcd:v3.3.10                                            admin:5000/coreos/etcd:v3.3.10
+docker image tag gcr.io/google-containers/pause:3.1                                     admin:5000/google-containers/pause:3.1
+docker image tag gcr.io/google_containers/pause-amd64:3.1                               admin:5000/google_containers/pause-amd64:3.1
+docker image tag lachlanevenson/k8s-helm:v3.1.0										    admin:5000/lachlanevenson/k8s-helm:v3.1.0
+docker image tag gcr.io/google-containers/cluster-proportional-autoscaler-amd64:1.6.0   admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+
+```
+
+
+
+docker push
+
+```
+docker push admin:5000/google-containers/kube-controller-manager:v1.16.6
+docker push admin:5000/google-containers/kube-apiserver:v1.16.6
+docker push admin:5000/google-containers/kube-proxy:v1.16.6
+docker push admin:5000/google-containers/kube-scheduler:v1.16.6
+docker push admin:5000/calico/node:v3.11.1
+docker push admin:5000/calico/cni:v3.11.1
+docker push admin:5000/calico/kube-controllers:v3.11.1
+docker push admin:5000/google-containers/k8s-dns-node-cache:1.15.8
+docker push admin:5000/coredns/coredns:1.6.0
+docker push admin:5000/weaveworks/weave-kube:2.5.2
+docker push admin:5000/weaveworks/weave-npc:2.5.2
+docker push admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+docker push admin:5000/google_containers/kubernetes-dashboard-amd64:v1.10.1
+docker push admin:5000/coreos/etcd:v3.3.10
+docker push admin:5000/google-containers/pause:3.1
+docker push admin:5000/google_containers/pause-amd64:3.1	
+docker push admin:5000/lachlanevenson/k8s-helm:v3.1.0
+docker push admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
+```
+
 
 
 ## HAproxy

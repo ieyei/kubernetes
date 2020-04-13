@@ -147,7 +147,10 @@ https://www.godaddy.com/garage/how-to-install-and-configure-nginx-on-centos-7/
 docker install
 
 ```
-yum localinstall /var/www/repo/docker-ce-18.09.7-3.el7.x86_64.rpm
+cd /var/www/repo
+
+yum localinstall -y docker-ce-cli-18.09.7-3.el7.x86_64.rpm containerd.io-1.2.13-3.1.el7.x86_64.rpm \
+ container-selinux-2.107-3.el7.noarch.rpm docker-ce-18.09.7-3.el7.x86_64.rpm
 ```
 
 

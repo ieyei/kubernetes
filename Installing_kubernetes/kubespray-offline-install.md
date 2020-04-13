@@ -322,15 +322,6 @@ extras_rh_repo_gpgkey: "http://admin/docker-mirror/centos/RPM-GPG-KEY-CentOS-7"
 
 
 
-vi inventory/mycluster/group_vars/all/all.yml
-
-```
-apiserver_loadbalancer_domain_name: admin
-loadbalancer_apiserver:
- address: admin
- port: 16443
-```
-
 
 
 \* 주요 다운로드 URL을 내부망으로 변경

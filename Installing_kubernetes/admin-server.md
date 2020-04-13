@@ -178,12 +178,20 @@ openssl req \
 
 domain.crt 복사(all servers)
 ```
-mkdir -p /etc/docker/certs.d/admin:5000
+mkdir -p /etc/docker/certs.d/admin:5000 # all servers
+
 cp /root/certs/domain.crt /etc/docker/certs.d/admin:5000/ca.crt 
+scp /root/certs/domain.crt node1:/etc/docker/certs.d/admin:5000/ca.crt
+scp /root/certs/domain.crt node2:/etc/docker/certs.d/admin:5000/ca.crt
+scp /root/certs/domain.crt node3:/etc/docker/certs.d/admin:5000/ca.crt
+scp /root/certs/domain.crt node4:/etc/docker/certs.d/admin:5000/ca.crt
+scp /root/certs/domain.crt node5:/etc/docker/certs.d/admin:5000/ca.crt
 ```
 
 registry start
 ```
+cd /root
+
 docker run -d \
   --restart=always \
   --name registry \

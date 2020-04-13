@@ -274,7 +274,7 @@ loadbalancer_apiserver:
 ## example define 172.19.16.11 or mirror.registry.io
 docker_insecure_registries:
 #  - mirror.registry.io
- - admin:5000
+ - 10.0.1.14:5000
 ```
 
 

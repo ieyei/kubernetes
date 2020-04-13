@@ -50,6 +50,17 @@ tar -xf kubespray-offline.tar -C /var/www
 tar xf yum_rhel76.tar -C /var/www
 ```
 
+## create yum repo
+```
+yum localinstall -y /var/www/repo/deltarpm-3.6-3.el7.x86_64.rpm 
+yum localinstall -y /var/www/repo/python-deltarpm-3.6-3.el7.x86_64.rpm
+yum localinstall -y /var/www/repo/createrepo-0.9.9-28.el7.noarch.rpm
+
+createrepo /var/www/repo
+
+```
+
+
 
 ## Nginx
 

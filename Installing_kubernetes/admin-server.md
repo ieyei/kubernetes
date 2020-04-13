@@ -159,7 +159,8 @@ docker registry 설치 & http 통신위한 설정
 
 ```
 service docker start
-docker pull registry
+
+docker load -i /var/www/registry.tar
 
 docker run -d -p 5000:5000 --restart=always --name registry registry
 
@@ -171,7 +172,7 @@ sudo vi /etc/docker/daemon.json
 service docker restart
 docker info
 
-systemctl enable nginx
+systemctl enable docker
 ```
 
 
@@ -181,7 +182,7 @@ systemctl enable nginx
 install
 
 ```
-yum localinstall /var/www/repo/haproxy-1.5.18-9.el7.x86_64.rpm
+yum localinstall -y /var/www/repo/haproxy-1.5.18-9.el7.x86_64.rpm
 ```
 
 

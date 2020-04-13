@@ -157,19 +157,45 @@ yum localinstall -y docker-ce-cli-18.09.7-3.el7.x86_64.rpm containerd.io-1.2.13-
 
 docker registry 설치 & http 통신위한 설정
 
+load image
 ```
 service docker start
 
 docker load -i /var/www/registry.tar
+```
 
-docker run -d -p 5000:5000 --restart=always --name registry registry
+**self-signed certificates**
+인증서 생성 (Common Name = admin)
+```
+mkdir -p /root/certs
+cd /root
 
-sudo vi /etc/docker/daemon.json
-{
-    "insecure-registries": ["admin:5000"]
-}
+openssl req \
+  -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+  -x509 -days 365 -out certs/domain.crt
 
-service docker restart
+```
+
+domain.crt 복사(all servers)
+```
+mkdir -p /etc/docker/certs.d/admin:5000
+cp /root/certs/domain.crt /etc/docker/certs.d/admin:5000/ca.crt 
+```
+
+registry start
+```
+docker run -d \
+  --restart=always \
+  --name registry \
+  -v "$(pwd)"/certs:/certs \
+  -e REGISTRY_HTTP_ADDR=0.0.0.0:5000 \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+  -p 5000:5000 \
+  registry
+```
+
+```
 docker info
 
 systemctl enable docker
@@ -229,6 +255,8 @@ docker push admin:5000/google_containers/pause-amd64:3.1
 docker push admin:5000/lachlanevenson/k8s-helm:v3.1.0
 docker push admin:5000/google-containers/cluster-proportional-autoscaler-amd64:1.6.0
 ```
+
+
 
 
 

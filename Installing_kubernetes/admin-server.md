@@ -34,6 +34,21 @@ echo "10.0.1.14 admin" >> /etc/hosts
 ```
 
 ## Download files from storage
+```
+mkdir -p /var/www
+cd /var/www
+```
+
+# Download files
+images_k8s.tar          # k8s images
+kubespray-offline.tar   # offline files
+registry.tar            # docker registry image
+yum_rhel76.tar          # files for rhel 7.6
+
+```
+tar -xf kubespray-offline.tar -C /var/www
+tar xf yum_rhel76.tar -C /var/www
+```
 
 
 ## Nginx
@@ -45,9 +60,7 @@ echo "10.0.1.14 admin" >> /etc/hosts
 
 file 저장 디렉토리
 
-```
-mkdir -p /var/www/repo
-```
+/var/www/
 
 
 

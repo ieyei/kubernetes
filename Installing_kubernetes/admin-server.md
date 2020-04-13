@@ -203,6 +203,8 @@ docker run -d \
   registry
 ```
 
+** 모든 서버 시간 동기화 체크! **
+
 ```
 docker info
 

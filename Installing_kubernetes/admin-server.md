@@ -39,7 +39,7 @@ mkdir -p /var/www
 cd /var/www
 ```
 
-# Download files
+**Download files**
 images_k8s.tar          # k8s images
 kubespray-offline.tar   # offline files
 registry.tar            # docker registry image
@@ -67,7 +67,7 @@ file 저장 디렉토리
 nginx install
 
 ```
-yum localinstall /var/www/repo/nginx-1.16.1-1.el7.ngx.x86_64.rpm
+yum localinstall -y /var/www/repo/nginx-1.16.1-1.el7.ngx.x86_64.rpm
 ```
 
 

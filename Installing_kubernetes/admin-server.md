@@ -15,11 +15,6 @@ Admin Server 역할
 * haproxy
 
 
-
-```
-yum update
-```
-
 ## Firewall
 
 ```
@@ -38,6 +33,7 @@ https://www.tecmint.com/setup-local-http-yum-repository-on-centos-7/
 echo "10.0.1.14 admin" >> /etc/hosts
 ```
 
+## Download files from storage
 
 
 ## Nginx

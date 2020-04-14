@@ -30,6 +30,21 @@ admin node : admin
 
 ## Prerequisites:
 
+### DNS off (all servers)
+vi /etc/ssh/sshd_config
+```
+...
+UseDNS no
+...
+```
+
+sshd restart
+```
+service sshd start
+```
+
+
+
 ### Enable passwordless login between all servers in the cluster.
 
 https://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/

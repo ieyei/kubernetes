@@ -164,6 +164,9 @@ service docker start
 docker load -i /var/www/registry.tar
 ```
 
+https://docs.docker.com/registry/insecure/#use-self-signed-certificates
+https://docs.docker.com/registry/deploying/#get-a-certificate#run-an-externally-accessible-registry
+
 **self-signed certificates**
 인증서 생성 (Common Name = admin)
 ```

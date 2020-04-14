@@ -352,8 +352,14 @@ restart HAProxy service
 sudo service haproxy restart
 ```
 
+## Firewall
+```
+firewall-cmd --permanent --add-port=16443/tcp   # haproxy
+firewall-cmd --permanent --add-port=80/tcp      # nginx
+firewall-cmd --permanent --add-port=5000/tcp    # docker registry
 
-
+firewall-cmd --reload
+```
 
 
 ---

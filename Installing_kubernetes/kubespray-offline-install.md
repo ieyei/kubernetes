@@ -161,7 +161,10 @@ gpgcheck=0
 
 files install for rhel 7.6 
 ```
-cd /var/www/yum_rhel76
+# copy yum_rhel76.tar to /root
+cd /root
+tar xf yum_rhel76.tar
+cd yum_rhel76
 
 rpm -Uvh audit-libs-2.8.5-4.el7.x86_64.rpm audit-2.8.5-4.el7.x86_64.rpm audit-libs-python-2.8.5-4.el7.x86_64.rpm
 rpm -Uvh libssh2-1.8.0-3.el7.x86_64.rpm
@@ -169,7 +172,7 @@ rpm -Uvh policycoreutils-2.5-33.el7.x86_64.rpm policycoreutils-python-2.5-33.el7
 ```
 
 ```
-yum update
+yum update -y
 ```
 
 

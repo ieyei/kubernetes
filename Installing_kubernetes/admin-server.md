@@ -204,6 +204,9 @@ docker run -d \
   -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
   -p 5000:5000 \
   registry
+  
+firewall-cmd --permanent --add-port=5000/tcp
+firewall-cmd --reload  
 ```
 
 ** 모든 서버 시간 동기화 체크! **

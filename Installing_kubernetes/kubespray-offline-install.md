@@ -407,5 +407,5 @@ ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml --flush-cache
 reset
 
 ```
-ansible-playbook -i inventory/mycluster/hosts.yml reset.yml --flush-cache -y
+ansible-playbook -i inventory/mycluster/hosts.yml reset.yml --flush-cache 
 ```

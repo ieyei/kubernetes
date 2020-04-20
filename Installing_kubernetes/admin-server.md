@@ -219,9 +219,51 @@ systemctl enable docker
 
 docker image load
 ```
-docker load -i /var/www/images_k8s.tar
+docker load -i /var/www/images_k8s_296.tar
 ```
 
+docker tag
+```
+docker image tag nginx:1.17                                                  admin:5000/nginx:1.17                                                    
+docker image tag calico/cni:v3.13.2                                          admin:5000/calico/cni:v3.13.2
+docker image tag calico/kube-controllers:v3.13.2                             admin:5000/calico/kube-controllers:v3.13.2
+docker image tag calico/node:v3.13.2                                         admin:5000/calico/node:v3.13.2
+docker image tag coredns/coredns:1.6.9                                       admin:5000/coredns/coredns:1.6.9
+docker image tag k8s.gcr.io/kube-proxy:v1.17.4                               admin:5000/kube-proxy:v1.17.4
+docker image tag k8s.gcr.io/kube-controller-manager:v1.17.4                  admin:5000/kube-controller-manager:v1.17.4
+docker image tag k8s.gcr.io/kube-apiserver:v1.17.4                           admin:5000/kube-apiserver:v1.17.4
+docker image tag k8s.gcr.io/kube-scheduler:v1.17.4                           admin:5000/kube-scheduler:v1.17.4
+docker image tag k8s.gcr.io/k8s-dns-node-cache:1.15.10                       admin:5000/k8s-dns-node-cache:1.15.10
+docker image tag k8s.gcr.io/cluster-proportional-autoscaler-amd64:1.6.0      admin:5000/cluster-proportional-autoscaler-amd64:1.6.0
+docker image tag quay.io/coreos/etcd:v3.3.12                                 admin:5000/coreos/etcd:v3.3.12
+docker image tag gcr.io/google_containers/kubernetes-dashboard-amd64:v1.10.1 admin:5000/google_containers/kubernetes-dashboard-amd64:v1.10.1
+docker image tag k8s.gcr.io/pause:3.1                                        admin:5000/pause:3.1
+```
+
+docker push
+
+```
+docker push admin:5000/nginx:1.17                                                  
+docker push admin:5000/calico/cni:v3.13.2
+docker push admin:5000/calico/kube-controllers:v3.13.2
+docker push admin:5000/calico/node:v3.13.2
+docker push admin:5000/coredns/coredns:1.6.9
+docker push admin:5000/kube-proxy:v1.17.4
+docker push admin:5000/kube-controller-manager:v1.17.4
+docker push admin:5000/kube-apiserver:v1.17.4
+docker push admin:5000/kube-scheduler:v1.17.4
+docker push admin:5000/k8s-dns-node-cache:1.15.10
+docker push admin:5000/cluster-proportional-autoscaler-amd64:1.6.0
+docker push admin:5000/coreos/etcd:v3.3.12
+docker push admin:5000/google_containers/kubernetes-dashboard-amd64:v1.10.1
+docker push admin:5000/pause:3.1
+```
+
+
+docker image load
+```
+docker load -i /var/www/images_k8s.tar
+```
 
 docker tag
 

@@ -353,6 +353,7 @@ restart HAProxy service
 
 ```
 sudo service haproxy restart
+sudo systemctl enable nginx
 ```
 
 ## Firewall

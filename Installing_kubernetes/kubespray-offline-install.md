@@ -182,10 +182,20 @@ cd /root
 tar xf yum_rhel76.tar
 cd yum_rhel76
 
-rpm -Uvh audit-libs-2.8.5-4.el7.x86_64.rpm audit-2.8.5-4.el7.x86_64.rpm audit-libs-python-2.8.5-4.el7.x86_64.rpm
-rpm -Uvh libssh2-1.8.0-3.el7.x86_64.rpm
-rpm -Uvh policycoreutils-2.5-33.el7.x86_64.rpm policycoreutils-python-2.5-33.el7.x86_64.rpm
-rpm -ivh python2-pyasn1-0.1.9-7.el7.noarch.rpm
+#rpm -Uvh audit-libs-2.8.5-4.el7.x86_64.rpm audit-2.8.5-4.el7.x86_64.rpm audit-libs-python-2.8.5-4.el7.x86_64.rpm
+#rpm -Uvh libssh2-1.8.0-3.el7.x86_64.rpm
+#rpm -Uvh policycoreutils-2.5-33.el7.x86_64.rpm policycoreutils-python-2.5-33.el7.x86_64.rpm
+#rpm -ivh python2-pyasn1-0.1.9-7.el7.noarch.rpm
+yum localinstall *.rpm
+```
+
+file install for azure rhel 7.6
+```
+cd /root
+tar xf az-rhel76.tar
+cd az-rhel76
+
+yum localinstall *.rpm
 ```
 
 ```

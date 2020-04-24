@@ -311,15 +311,15 @@ loadbalancer_apiserver:
 
 
 
- vi inventory/mycluster/group_vars/all/docker.yml
+ vi inventory/mycluster/group_vars/all/docker.yml (인증서 작업시 불필요)
 
 ```
 ## An obvious use case is allowing insecure-registry access to self hosted registries.
 ## Can be ipaddress and domain_name.
 ## example define 172.19.16.11 or mirror.registry.io
-docker_insecure_registries:
+#docker_insecure_registries:
 #  - mirror.registry.io
- - 10.0.1.14:5000
+# - 10.0.1.14:5000
 ```
 
 

@@ -202,7 +202,7 @@ yum update -y
 **Python:**
 
 ```
-yum install -y python2-pip
+#yum install -y python2-pip
 yum install -y python36 python36-pip
 ```
 
@@ -219,8 +219,8 @@ scp admin:/var/www/piprepo.tar .
 tar xf piprepo.tar
 
 # pip metadata
-pip3 install --user piprepo/pip2pi-0.8.1-py2.py3-none-any.whl 
-dir2pi ./piprepo/  #simple dir created
+#pip3 install --user piprepo/pip2pi-0.8.1-py2.py3-none-any.whl 
+#dir2pi ./piprepo/  #simple dir created
 
 mkdir .pip
 vi .pip/pip.conf

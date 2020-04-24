@@ -219,7 +219,7 @@ scp admin:/var/www/piprepo.tar .
 tar xf piprepo.tar
 
 # pip metadata
-#pip3 install --user piprepo/pip2pi-0.8.1-py2.py3-none-any.whl 
+#pip3 install piprepo/pip2pi-0.8.1-py2.py3-none-any.whl 
 #dir2pi ./piprepo/  #simple dir created
 
 mkdir .pip
@@ -247,7 +247,7 @@ ruamel.yaml==0.16.10
 ansible install
 
 ```
-pip3 install --user -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 

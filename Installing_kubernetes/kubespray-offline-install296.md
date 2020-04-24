@@ -284,7 +284,7 @@ cp -R inventory/sample/ inventory/mycluster
 ```
 touch inventory/mycluster/hosts.yml
 
-declare -a IPS=(10.0.1.15 10.0.1.15 10.0.1.15 10.0.1.15 10.0.1.15)
+declare -a IPS=(10.0.1.15 10.0.1.16 10.0.1.17 10.0.1.18 10.0.1.19)
 CONFIG_FILE=inventory/mycluster/hosts.yml python contrib/inventory_builder/inventory.py ${IPS[@]}
 ```
 

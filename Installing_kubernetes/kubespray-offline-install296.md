@@ -328,7 +328,8 @@ vi inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
 
 ```
 # kubernetes image repo define
-kube_image_repo: "k8s.gcr.io"
+#kube_image_repo: "k8s.gcr.io"
+kube_image_repo: "admin:5000"
 
 ...
 
@@ -368,8 +369,8 @@ vi roles/download/defaults/main.yml
 ```
 # gcr and kubernetes image repo define
 #gcr_image_repo: "gcr.io"
-gcr_image_repo: "admin:5000/gcr.io"
-kube_image_repo: "admin:5000/k8s.gcr.io"
+gcr_image_repo: "admin:5000"
+kube_image_repo: "admin:5000"
 
 # docker image repo define
 #docker_image_repo: "docker.io"

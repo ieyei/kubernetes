@@ -6,3 +6,6 @@
 1. [Admin Server Install](admin-server.md)
 2. [kubespray Install](kubespray-offline-install296.md)
 
+### haproxy
+[kuberspray-haproxy-modify](kubespray-haproxy-modify.md)
+

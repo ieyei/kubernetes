@@ -7,12 +7,13 @@ node1(192.168.56.111) : master1
 node2(192.168.56.112) : master2
 
 node3(192.168.56.113) : worker1, haproxy
+ 
+node4(192.168.56.114) : worker2  
 
-node4(192.168.56.114) : worker2
 
 
 
-작업내용 : haproxy를 node3(192.168.56.113) 에서 node4(192.168.56.114) 로 이전 설치 & domain name로 설정
+**작업내용** : haproxy를 node3(192.168.56.113) 에서 node4(192.168.56.114) 로 이전 설치 & domain name로 설정
 
 
 

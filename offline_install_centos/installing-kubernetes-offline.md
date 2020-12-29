@@ -1,5 +1,3 @@
-https://docs.genesys.com/Documentation/GCXI/9.0.0/Dep/DockerOffline
-
 
 구성 순서
 1. Docker

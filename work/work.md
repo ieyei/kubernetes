@@ -18,13 +18,6 @@ node5   Ready    <none>   51m   v1.17.12
 
 
 ```sh
-root@node1:~# kubectl get nodes
-NAME    STATUS   ROLES    AGE   VERSION
-node1   Ready    master   37m   v1.17.12
-node2   Ready    master   37m   v1.17.12
-node3   Ready    <none>   36m   v1.17.12
-node4   Ready    <none>   36m   v1.17.12
-node5   Ready    <none>   36m   v1.17.12
 
 root@node1:~# kubeadm alpha certs check-expiration
 [check-expiration] Reading configuration from the cluster...
